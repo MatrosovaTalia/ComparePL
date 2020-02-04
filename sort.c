@@ -28,14 +28,8 @@ int main(){
         arr[i] = num;
     }
 
-//     FILE* out = fopen("arrayReverse.txt", "w");
-//     for (int i = 0; i < N; i++){
-//         fprintf(out, "%d ", arr[N - 1 - i]);
-//     }
-//     fclose(out);
-
     start = clock();
-   insertionSort(arr, len);
+    insertionSort(arr, len);
     end = clock();
 
     insertion_time = ((double) (end - start)) / CLOCKS_PER_SEC;
@@ -46,7 +40,7 @@ int main(){
     }
 
     start = clock();
-   mergeSort(arr, 0, len - 1);
+    mergeSort(arr, 0, len - 1);
     end = clock();
 
     merge_time = ((double) (end - start)) / CLOCKS_PER_SEC;
@@ -62,15 +56,10 @@ int main(){
 
     counting_time = ((double) (end - start)) / CLOCKS_PER_SEC;
 
-//
-//    for (int i = 0; i < len; i++){
-//        printf("%d ", arr[i]);
-//    }
-//    printf("\n");
 
-    fprintf(outTime, "Insertion sort time: %f\n"
-                     "Merge sort time: %f\n"
-                     "Counting sort time: %f\n", insertion_time, merge_time, counting_time);
+    fprintf(outTime, "C: Insertion sort time: %f\n"
+                     "C: Merge sort time: %f\n"
+                     "C: Counting sort time: %f\n", insertion_time, merge_time, counting_time);
 
     // printf("Hello, I am C file!\n");
 

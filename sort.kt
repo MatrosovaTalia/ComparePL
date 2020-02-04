@@ -1,5 +1,6 @@
 import java.util.*
 import java.io.File
+import java.io.FileWriter
 
 fun insertionSort(arr: IntArray): Unit{
     for (i in 1 until arr.size){
@@ -118,8 +119,18 @@ fun main(args : Array<String>){
     end = System.nanoTime()
     counting_time = (end - start).toDouble() / 1_000_000_000
 
-    println("Insertion sort time: %f\n".format(insertion_time) +
-            "Merge sort time: %f\n".format(merge_time) +
-            "Counting sort time: %f\n".format(counting_time))
+    // println("Insertion sort time: %f\n".format(insertion_time) +
+    //         "Merge sort time: %f\n".format(merge_time) +
+    //         "Counting sort time: %f\n".format(counting_time))
     // println("Hello, I am Kotlin file!\n");
+
+    val output = String.format(
+        "Kotlin: Insertion sort time: %f\n" +
+                "Kotlin: Merge sort time: %f\n" +
+                "Kotlin: Counting sort time: %f\n", insertion_time, merge_time, counting_time
+    )
+    val file = File("time-measured.txt")
+    val fr = FileWriter(file, true)
+    fr.write(output)
+    fr.close()
 }

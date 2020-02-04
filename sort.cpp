@@ -18,6 +18,8 @@ int main() {
     int arr[N];
     int len = N;
     int num;
+    FILE* outTime = fopen("time-measured.txt", "a");
+
     FILE* input = fopen("array.txt", "r");
     for (int i = 0; i < N; i++){
         fscanf(input, "%d", &num);
@@ -58,12 +60,13 @@ int main() {
     counting_time = ((double) (end - start)) / CLOCKS_PER_SEC;
 
 
-    printf("Insertion sort time: %f\n"
-                  "Merge sort time: %f\n"
-                  "Counting sort time: %f\n", insertion_time, merge_time, counting_time);
+    fprintf(outTime, "C++: Insertion sort time: %f\n"
+            "C++: Merge sort time: %f\n"
+            "C++: Counting sort time: %f\n", insertion_time, merge_time, counting_time);
 
     // printf("Hello, I am c++ file!\n");
     fclose(input);
+    fclose(outTime);
     return 0;
 }
 

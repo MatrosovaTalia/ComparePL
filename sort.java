@@ -140,9 +140,9 @@ public class sort {
         // System.out.println(Arrays.toString(arr));
         // System.out.println("Hello, I am java file!");
 
-       String output = String.format("Insertion sort time: %f\n" +
-               "Merge sort time: %f\n" +
-               "Counting sort time: %f\n", insertion_time, merge_time, counting_time);
+       String output = String.format("Java: Insertion sort time: %f\n" +
+               "Java: Merge sort time: %f\n" +
+               "Java: Counting sort time: %f\n", insertion_time, merge_time, counting_time);
        File file = new File("time-measured.txt");
        FileWriter fr = new FileWriter(file, true);
        fr.write(output);
