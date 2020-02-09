@@ -1,31 +1,57 @@
 
-Profiling js/counting_sort.js
-0.044  user 0.010 system 97% cpu 0.056 total
-max memory:                20020 KB
+Profiling js/*.js
+./run_profiler.sh: line 15: node: command not found
 
+real	0m0,005s
+user	0m0,003s
+sys	0m0,001s
 
-Profiling js/insertion_sort.js
-0.075  user 0.009 system 98% cpu 0.086 total
-max memory:                20028 KB
+Profiling swift/*.swift
+./run_profiler.sh: line 24: swift: command not found
 
+real	0m0,003s
+user	0m0,003s
+sys	0m0,000s
 
-Profiling js/merge_sort.js
-0.044  user 0.007 system 106% cpu 0.048 total
-max memory:                22608 KB
+Profiling c/countingSort.c
 
+real	0m0,002s
+user	0m0,002s
+sys	0m0,000s
+	1504 max memory consumption
 
-Profiling swift/counting_sort.swift
-0.169  user 0.030 system 98% cpu 0.203 total
-max memory:                48444 KB
+Profiling c/insertionSort.c
 
+real	0m0,004s
+user	0m0,000s
+sys	0m0,004s
+	1748 max memory consumption
 
-Profiling swift/insertion_sort.swift
-0.141  user 0.028 system 97% cpu 0.173 total
-max memory:                47204 KB
+Profiling c/mergeSort.c
 
+real	0m0,013s
+user	0m0,000s
+sys	0m0,003s
+	1672 max memory consumption
 
-Profiling swift/merge_sort.swift
-0.209  user 0.035 system 97% cpu 0.251 total
-max memory:                48460 KB
+Profiling java/countingSort.java
 
+real	0m1,325s
+user	0m2,714s
+sys	0m0,159s
+	83408 max memory consumption
+
+Profiling java/insertionSort.java
+
+real	0m1,079s
+user	0m2,448s
+sys	0m0,132s
+	83296 max memory consumption
+
+Profiling java/mergeSort.java
+
+real	0m1,268s
+user	0m2,637s
+sys	0m0,123s
+	82916 max memory consumption
 
