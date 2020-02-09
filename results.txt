@@ -1,57 +1,106 @@
 
-Profiling js/*.js
+Profiling js/counting_sort.js
 ./run_profiler.sh: line 15: node: command not found
+
+real	0m0,008s
+user	0m0,004s
+sys	0m0,000s
+
+Profiling js/insertion_sort.js
+./run_profiler.sh: line 15: node: command not found
+
+real	0m0,008s
+user	0m0,003s
+sys	0m0,001s
+
+Profiling js/merge_sort.js
+./run_profiler.sh: line 15: node: command not found
+
+real	0m0,005s
+user	0m0,004s
+sys	0m0,000s
+
+Profiling swift/counting_sort.swift
+./run_profiler.sh: line 24: swift: command not found
+
+real	0m0,007s
+user	0m0,003s
+sys	0m0,002s
+
+Profiling swift/insertion_sort.swift
+./run_profiler.sh: line 24: swift: command not found
 
 real	0m0,005s
 user	0m0,003s
 sys	0m0,001s
 
-Profiling swift/*.swift
+Profiling swift/merge_sort.swift
 ./run_profiler.sh: line 24: swift: command not found
 
 real	0m0,003s
-user	0m0,003s
-sys	0m0,000s
+user	0m0,000s
+sys	0m0,003s
 
 Profiling c/countingSort.c
 
 real	0m0,002s
-user	0m0,002s
-sys	0m0,000s
-	1504 max memory consumption
+user	0m0,000s
+sys	0m0,002s
+	1680 max memory consumption
 
 Profiling c/insertionSort.c
 
-real	0m0,004s
+real	0m0,002s
 user	0m0,000s
-sys	0m0,004s
-	1748 max memory consumption
+sys	0m0,002s
+	1692 max memory consumption
 
 Profiling c/mergeSort.c
 
-real	0m0,013s
-user	0m0,000s
-sys	0m0,003s
-	1672 max memory consumption
+real	0m0,001s
+user	0m0,001s
+sys	0m0,000s
+	1592 max memory consumption
+
+Profiling kt/countingSort.kt
+
+real	0m0,305s
+user	0m0,425s
+sys	0m0,034s
+	37660 max memory consumption
+
+Profiling kt/insertionSort.kt
+
+real	0m0,320s
+user	0m0,469s
+sys	0m0,049s
+	37928 max memory consumption
+
+Profiling kt/mergeSort.kt
+
+real	0m0,340s
+user	0m0,479s
+sys	0m0,076s
+	42368 max memory consumption
 
 Profiling java/countingSort.java
 
-real	0m1,325s
-user	0m2,714s
-sys	0m0,159s
-	83408 max memory consumption
+real	0m1,485s
+user	0m3,094s
+sys	0m0,187s
+	81072 max memory consumption
 
 Profiling java/insertionSort.java
 
-real	0m1,079s
-user	0m2,448s
-sys	0m0,132s
-	83296 max memory consumption
+real	0m1,631s
+user	0m3,145s
+sys	0m0,258s
+	81948 max memory consumption
 
 Profiling java/mergeSort.java
 
-real	0m1,268s
-user	0m2,637s
-sys	0m0,123s
-	82916 max memory consumption
+real	0m1,755s
+user	0m3,300s
+sys	0m0,196s
+	83980 max memory consumption
 
