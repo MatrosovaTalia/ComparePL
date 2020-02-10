@@ -34,10 +34,21 @@ do
 	{ time ./"${f%.c}.out" ; } 2>> $res
 	{ /usr/bin/time -f "\t%M max memory consumption" ./"${f%.c}.out" ; } 2>> $res
 	rm "${f%.c}.out"	
-	echo "" >> $res
-	
-	
+	echo "" >> $res	
 done
+
+# for cpp compilation and execution
+for f in "cpp"/*.cpp
+do
+	echo "Profiling $f" >> $res
+	echo "$f" >> $progs
+	g++ -o ${f%.cpp}.out $f
+	{ time ./"${f%.cpp}.out" ; } 2>> $res
+	{ /usr/bin/time -f "\t%M max memory consumption" ./"${f%.cpp}.out" ; } 2>> $res
+	rm "${f%.cpp}.out"	
+	echo "" >> $res		
+done
+
 
 # for kotlin compilation and execution
 for f in "kt"/*.kt
