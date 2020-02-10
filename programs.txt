@@ -2,6 +2,9 @@
 c/countingSort.c
 c/insertionSort.c
 c/mergeSort.c
+cpp/insertionSort.cpp
+cpp/mergeSort.cpp
+cpp/sort.cpp
 kt/countingSort.kt
 kt/insertionSort.kt
 kt/mergeSort.kt
