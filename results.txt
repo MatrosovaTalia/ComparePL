@@ -2,128 +2,150 @@
 Profiling js/counting_sort.js
 ./run_profiler.sh: line 15: node: command not found
 
-real	0m0,003s
-user	0m0,002s
-sys	0m0,001s
+real	0m0,004s
+user	0m0,000s
+sys	0m0,003s
 
 Profiling js/insertion_sort.js
 ./run_profiler.sh: line 15: node: command not found
 
-real	0m0,003s
+real	0m0,004s
 user	0m0,002s
 sys	0m0,001s
 
 Profiling js/merge_sort.js
 ./run_profiler.sh: line 15: node: command not found
 
-real	0m0,002s
-user	0m0,000s
-sys	0m0,003s
+real	0m0,003s
+user	0m0,002s
+sys	0m0,000s
 
 Profiling swift/counting_sort.swift
 ./run_profiler.sh: line 24: swift: command not found
 
-real	0m0,003s
+real	0m0,002s
 user	0m0,002s
-sys	0m0,001s
+sys	0m0,000s
 
 Profiling swift/insertion_sort.swift
 ./run_profiler.sh: line 24: swift: command not found
 
-real	0m0,002s
-user	0m0,002s
-sys	0m0,001s
+real	0m0,003s
+user	0m0,000s
+sys	0m0,002s
 
 Profiling swift/merge_sort.swift
 ./run_profiler.sh: line 24: swift: command not found
 
-real	0m0,003s
+real	0m0,001s
+user	0m0,001s
+sys	0m0,000s
+
+Profiling c/BSTinsert.c
+
+real	0m0,002s
+user	0m0,001s
+sys	0m0,000s
+
+Profiling c/BSTremove.c
+
+real	0m0,002s
 user	0m0,002s
-sys	0m0,001s
+sys	0m0,000s
 
 Profiling c/countingSort.c
 
 real	0m0,002s
 user	0m0,002s
 sys	0m0,000s
-	1676 max memory consumption
 
 Profiling c/insertionSort.c
 
 real	0m0,002s
 user	0m0,002s
 sys	0m0,000s
-	1636 max memory consumption
 
 Profiling c/mergeSort.c
 
 real	0m0,001s
 user	0m0,001s
 sys	0m0,000s
-	1692 max memory consumption
+
+Profiling cpp/countingSort.cpp
+
+real	0m0,002s
+user	0m0,002s
+sys	0m0,000s
 
 Profiling cpp/insertionSort.cpp
 
 real	0m0,003s
 user	0m0,003s
 sys	0m0,000s
-	3524 max memory consumption
 
 Profiling cpp/mergeSort.cpp
 
 real	0m0,002s
 user	0m0,002s
 sys	0m0,000s
-	3752 max memory consumption
 
-Profiling cpp/sort.cpp
-./run_profiler.sh: line 41:  8747 Segmentation fault      (core dumped) ./"${f%.cpp}.out"
+Profiling kt/BSTinsert.kt
 
-real	0m0,133s
-user	0m0,002s
-sys	0m0,000s
-Command terminated by signal 11
-	3068 max memory consumption
+real	0m0,523s
+user	0m0,636s
+sys	0m0,056s
+
+Profiling kt/BSTremove.kt
+
+real	0m0,407s
+user	0m0,584s
+sys	0m0,060s
 
 Profiling kt/countingSort.kt
 
-real	0m0,222s
-user	0m0,303s
-sys	0m0,038s
-	37276 max memory consumption
+real	0m0,266s
+user	0m0,358s
+sys	0m0,037s
 
 Profiling kt/insertionSort.kt
 
-real	0m0,230s
-user	0m0,314s
-sys	0m0,042s
-	38620 max memory consumption
+real	0m0,367s
+user	0m0,469s
+sys	0m0,052s
 
 Profiling kt/mergeSort.kt
 
-real	0m0,255s
-user	0m0,389s
+real	0m0,311s
+user	0m0,454s
 sys	0m0,045s
-	42204 max memory consumption
+
+Profiling java/BSTinsert.java
+
+real	0m1,222s
+user	0m2,687s
+sys	0m0,144s
+
+Profiling java/BSTremove.java
+
+real	0m1,303s
+user	0m2,680s
+sys	0m0,162s
 
 Profiling java/countingSort.java
 
-real	0m1,034s
-user	0m2,443s
-sys	0m0,104s
-	84020 max memory consumption
+real	0m1,532s
+user	0m2,872s
+sys	0m0,120s
 
 Profiling java/insertionSort.java
 
-real	0m1,087s
-user	0m2,501s
-sys	0m0,131s
-	84672 max memory consumption
+real	0m1,110s
+user	0m2,567s
+sys	0m0,119s
 
 Profiling java/mergeSort.java
 
-real	0m1,187s
-user	0m2,612s
-sys	0m0,161s
-	83928 max memory consumption
+real	0m1,166s
+user	0m2,636s
+sys	0m0,109s
 
