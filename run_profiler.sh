@@ -32,7 +32,7 @@ do
 	echo "$f" >> $progs
 	gcc $f -o ${f%.c}.out
 	{ time ./"${f%.c}.out" ; } 2>> $res
-	{ /usr/bin/time -f "\t%M max memory consumption" ./"${f%.c}.out" ; } 2>> $res
+	# { /usr/bin/time -f "\t%M max memory consumption" ./"${f%.c}.out" ; } 2>> $res
 	rm "${f%.c}.out"	
 	echo "" >> $res	
 done
@@ -44,7 +44,7 @@ do
 	echo "$f" >> $progs
 	g++ -o ${f%.cpp}.out $f
 	{ time ./"${f%.cpp}.out" ; } 2>> $res
-	{ /usr/bin/time -f "\t%M max memory consumption" ./"${f%.cpp}.out" ; } 2>> $res
+	# { /usr/bin/time -f "\t%M max memory consumption" ./"${f%.cpp}.out" ; } 2>> $res
 	rm "${f%.cpp}.out"	
 	echo "" >> $res		
 done
@@ -57,7 +57,8 @@ do
 	echo "$f" >> $progs
 	kotlinc $f -include-runtime -d ${f%.kt}.jar
 	{ time java -jar ${f%.kt}.jar ; } 2>> $res
-	{ /usr/bin/time -f "\t%M max memory consumption" java -jar ${f%.kt}.jar ; } 2>> $res
+	# { /usr/bin/time -f "\t%M max memory consumption" java -jar ${f%.kt}.jar ; } 2>> $res
+	rm "${f%.kt}.jar"
 	echo "" >> $res
 
 done
@@ -69,7 +70,7 @@ do
 	echo "Profiling $f" >> $res
 	{ time java $f ; } 2>> $res
 	echo "$f" >> $progs
-	{ /usr/bin/time -f "\t%M max memory consumption" java $f ; } 2>> $res
+	# { /usr/bin/time -f "\t%M max memory consumption" java $f ; } 2>> $res
 	echo "" >> $res
 done
 
