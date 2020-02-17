@@ -1,3 +1,5 @@
+import Foundation
+
 func insertionSort(_ array : [Float])->[Float] {
     var to_sort = array
     
@@ -13,4 +15,10 @@ func insertionSort(_ array : [Float])->[Float] {
     return to_sort
 }
 
-var result = insertionSort([5,2, 56, 2, 1, 7, 1, 3, 5, 10, 123])
+let text = try! String(contentsOfFile: "./array.txt", encoding: String.Encoding.utf8)
+let lines : [Float] = text.components(separatedBy: " ").map { Float($0)!}
+
+let startTime = Date().timeIntervalSinceReferenceDate
+var result = insertionSort(lines)
+let timeElapsed = (Date().timeIntervalSinceReferenceDate - startTime) * 1000
+print("Insertion sort: \(timeElapsed)ms.")

@@ -1,3 +1,5 @@
+import Foundation
+
 func countingSort(_ arr : [Int])-> [Int] {
 	let max = arr.max() ?? 0
 
@@ -20,4 +22,10 @@ func countingSort(_ arr : [Int])-> [Int] {
 	return sortedArray
 }
 
-var result = countingSort([5,2, 56, 2, 1, 7, 1, 3, 5, 10, 123])
+let text = try! String(contentsOfFile: "./array.txt", encoding: String.Encoding.utf8)
+let lines : [Int] = text.components(separatedBy: " ").map { Int($0)!}
+
+let startTime = Date().timeIntervalSinceReferenceDate
+var result = countingSort(lines)
+let timeElapsed = (Date().timeIntervalSinceReferenceDate - startTime) * 1000
+print("Counting sort: \(timeElapsed)ms.")

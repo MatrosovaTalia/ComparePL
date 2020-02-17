@@ -1,3 +1,5 @@
+import Foundation
+
 func mergeSort(_ arr : [Float])->[Float] {
     guard arr.count > 1 else { return arr }
     
@@ -41,5 +43,11 @@ func merge(_ arr1 : [Float],_ arr2 : [Float])->[Float] {
     return sortedArray
 }
 
-var result = mergeSort([5,2, 56, 2, 1, 7, 1, 3, 5, 10, 123])
+let text = try! String(contentsOfFile: "./array.txt", encoding: String.Encoding.utf8)
+let lines : [Float] = text.components(separatedBy: " ").map { Float($0)!}
+
+let startTime = Date().timeIntervalSinceReferenceDate
+var result = mergeSort(lines)
+let timeElapsed = (Date().timeIntervalSinceReferenceDate - startTime) * 1000
+print("Merge sort: \(timeElapsed)ms.")
 
