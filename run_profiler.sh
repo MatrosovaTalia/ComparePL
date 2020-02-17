@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file="results.txt"
+file="./out/results.txt"
 
 # clear output file
 echo "" > $file
@@ -22,3 +22,8 @@ do
 	{ time swift $f ; } 2>> $file
 	echo "" >> $file
 done
+
+clang run.c -o sort
+./sort >> $file
+
+cat $file
