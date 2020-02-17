@@ -12,7 +12,7 @@ echo "" > $progs
 for f in "js"/*.js
 do
 	echo "Profiling $f" >> $res
-	{ time node $f ; } 2>> $res
+	node $f >> $res
 	echo "" >> $res
 done
 
@@ -21,7 +21,7 @@ done
 for f in "swift"/*.swift
 do
 	echo "Profiling $f" >> $res
-	{ time swift $f ; } 2>> $res
+	swift $f >> $res
 	echo "" >> $res
 done
 
@@ -74,3 +74,4 @@ do
 	echo "" >> $res
 done
 
+cat $res

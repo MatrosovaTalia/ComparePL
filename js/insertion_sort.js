@@ -16,5 +16,14 @@ const arr = [];
 for (let i = 0; i < 10000; i++) {
 	arr.push(Math.floor(Math.random() * 500));
 }
+const measureTime = (func, name) => (...args) => {
+	console.time(name);
+	func(...args);
+	console.timeEnd(name);
+}
 
-insertionSort(arr);
+const fs = require('fs');
+fs.readFile('./array.txt', {encoding: 'utf8'}, (err, data) => {
+	const arr = data.split(' ').map(x=>+x);
+	measureTime(insertionSort, 'Insertion sort')(arr);
+})

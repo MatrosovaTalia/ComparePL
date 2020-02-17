@@ -1,151 +1,138 @@
 
-Profiling js/counting_sort.js
-./run_profiler.sh: line 15: node: command not found
 
-real	0m0,004s
-user	0m0,000s
-sys	0m0,003s
+Profiling js/counting_sort.js
+Counting sort: 0.886ms
 
 Profiling js/insertion_sort.js
-./run_profiler.sh: line 15: node: command not found
-
-real	0m0,004s
-user	0m0,002s
-sys	0m0,001s
+Insertion sort: 5.148ms
 
 Profiling js/merge_sort.js
-./run_profiler.sh: line 15: node: command not found
-
-real	0m0,003s
-user	0m0,002s
-sys	0m0,000s
+Merge sort: 8.339ms
 
 Profiling swift/counting_sort.swift
-./run_profiler.sh: line 24: swift: command not found
-
-real	0m0,002s
-user	0m0,002s
-sys	0m0,000s
+Counting sort: 0.7570981979370117ms.
 
 Profiling swift/insertion_sort.swift
-./run_profiler.sh: line 24: swift: command not found
-
-real	0m0,003s
-user	0m0,000s
-sys	0m0,002s
+Insertion sort: 2.3720264434814453ms.
 
 Profiling swift/merge_sort.swift
-./run_profiler.sh: line 24: swift: command not found
-
-real	0m0,001s
-user	0m0,001s
-sys	0m0,000s
+Merge sort: 1.5239715576171875ms.
 
 Profiling c/BSTinsert.c
 
-real	0m0,002s
-user	0m0,001s
-sys	0m0,000s
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
 
 Profiling c/BSTremove.c
 
-real	0m0,002s
-user	0m0,002s
-sys	0m0,000s
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
 
 Profiling c/countingSort.c
 
-real	0m0,002s
-user	0m0,002s
-sys	0m0,000s
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
 
 Profiling c/insertionSort.c
 
-real	0m0,002s
-user	0m0,002s
-sys	0m0,000s
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
 
 Profiling c/mergeSort.c
 
-real	0m0,001s
-user	0m0,001s
-sys	0m0,000s
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
 
 Profiling cpp/countingSort.cpp
 
-real	0m0,002s
-user	0m0,002s
-sys	0m0,000s
+real	0m0.002s
+user	0m0.001s
+sys	0m0.001s
 
 Profiling cpp/insertionSort.cpp
 
-real	0m0,003s
-user	0m0,003s
-sys	0m0,000s
+real	0m0.003s
+user	0m0.002s
+sys	0m0.001s
 
 Profiling cpp/mergeSort.cpp
 
-real	0m0,002s
-user	0m0,002s
-sys	0m0,000s
+real	0m0.003s
+user	0m0.001s
+sys	0m0.002s
 
 Profiling kt/BSTinsert.kt
+run_profiler.sh: line 59: java: command not found
 
-real	0m0,523s
-user	0m0,636s
-sys	0m0,056s
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
 
 Profiling kt/BSTremove.kt
+run_profiler.sh: line 59: java: command not found
 
-real	0m0,407s
-user	0m0,584s
-sys	0m0,060s
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
 
 Profiling kt/countingSort.kt
+run_profiler.sh: line 59: java: command not found
 
-real	0m0,266s
-user	0m0,358s
-sys	0m0,037s
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
 
 Profiling kt/insertionSort.kt
+run_profiler.sh: line 59: java: command not found
 
-real	0m0,367s
-user	0m0,469s
-sys	0m0,052s
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
 
 Profiling kt/mergeSort.kt
+run_profiler.sh: line 59: java: command not found
 
-real	0m0,311s
-user	0m0,454s
-sys	0m0,045s
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
 
 Profiling java/BSTinsert.java
+run_profiler.sh: line 71: java: command not found
 
-real	0m1,222s
-user	0m2,687s
-sys	0m0,144s
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s
 
 Profiling java/BSTremove.java
+run_profiler.sh: line 71: java: command not found
 
-real	0m1,303s
-user	0m2,680s
-sys	0m0,162s
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
 
 Profiling java/countingSort.java
+run_profiler.sh: line 71: java: command not found
 
-real	0m1,532s
-user	0m2,872s
-sys	0m0,120s
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
 
 Profiling java/insertionSort.java
+run_profiler.sh: line 71: java: command not found
 
-real	0m1,110s
-user	0m2,567s
-sys	0m0,119s
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
 
 Profiling java/mergeSort.java
+run_profiler.sh: line 71: java: command not found
 
-real	0m1,166s
-user	0m2,636s
-sys	0m0,109s
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
 
