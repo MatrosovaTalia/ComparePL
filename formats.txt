@@ -1,0 +1,81 @@
+https://linux.die.net/man/1/time
+
+The format string
+
+The format is interpreted in the usual printf-like way. Ordinary characters are directly copied, tab, newline and backslash are escaped using \t, \n and \\, a percent sign is represented by %%, and otherwise % indicates a conversion. The program time will always add a trailing newline itself. The conversions follow. All of those used by tcsh(1) are supported.
+
+Memory------------------------------------------------
+%M
+Maximum resident set size of the process during its lifetime, in Kbytes.
+
+%t
+
+(Not in tcsh.) Average resident set size of the process, in Kbytes.
+
+%K
+
+Average total (data+stack+text) memory use of the process, in Kbytes.
+
+%D
+
+Average size of the process's unshared data area, in Kbytes.
+
+%p
+
+(Not in tcsh.) Average size of the process's unshared stack space, in Kbytes.
+
+%X
+
+Average size of the process's shared text space, in Kbytes.
+
+%Z
+
+(Not in tcsh.) System's page size, in bytes. This is a per-system constant, but varies between systems.
+
+%F
+
+Number of major page faults that occurred while the process was running. These are faults where the page has to be read in from disk.
+
+%R
+
+Number of minor, or recoverable, page faults. These are faults for pages that are not valid but which have not yet been claimed by other virtual pages. Thus the data in the page is still valid but the system tables must be updated.
+
+%W
+
+Number of times the process was swapped out of main memory.
+
+%c
+
+Number of times the process was context-switched involuntarily (because the time slice expired).
+
+%w
+
+Number of waits: times that the program was context-switched voluntarily, for instance while waiting for an I/O operation to complete.
+
+I/O------------------------------------------------
+%I
+Number of file system inputs by the process.
+
+%O
+
+Number of file system outputs by the process.
+
+%r
+
+Number of socket messages received by the process.
+
+%s
+
+Number of socket messages sent by the process.
+
+%k
+
+Number of signals delivered to the process.
+
+%C
+
+(Not in tcsh.) Name and command-line arguments of the command being timed.
+
+%x
+
+(Not in tcsh.) Exit status of the command.

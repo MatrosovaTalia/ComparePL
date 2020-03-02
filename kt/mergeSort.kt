@@ -60,6 +60,12 @@ fun main(args : Array<String>){
     while (scanner.hasNextInt()) {
         arr[i++] = scanner.nextInt()
     }
+
+    val time = System.nanoTime();
     merge_sort(arr, 0, arr.lastIndex)
+
+    val timeMilli = (System.nanoTime() - time) / 1000000
+
+    println("Merge sort: $timeMilli ms")
 
 }

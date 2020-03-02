@@ -27,5 +27,11 @@ fun main(args : Array<String>) {
     while (scanner.hasNextInt()) {
         arr[i++] = scanner.nextInt()
     }
+
+    val time = System.nanoTime();
     counting_sort(arr)
+
+    val timeMilli = (System.nanoTime() - time) / 1000000
+
+    println("Counting sort: $timeMilli ms")
 }

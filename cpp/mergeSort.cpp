@@ -1,4 +1,5 @@
 #include <iostream>
+#include <chrono>
 #define N 1000
 using namespace std;
 
@@ -59,5 +60,13 @@ int main() {
         fscanf(input, "%d", &num);
         arr[i] = num;
     }
+
+    auto start = std::chrono::system_clock::now();
+
     mergeSort(arr, 0, len - 1);
+
+    auto end = std::chrono::system_clock::now();
+    std::chrono::duration<double> elapsed_seconds = end-start;
+
+    std::cout << "Merge sort: " << elapsed_seconds.count() << "s\n";
 }

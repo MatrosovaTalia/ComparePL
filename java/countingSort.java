@@ -34,6 +34,13 @@ public class countingSort {
             arr[i++] = scanner.nextInt();
         }
         countingSort obj = new countingSort();
+
+        final double startTime = System.nanoTime() / 1000000;
+
         obj.counting_sort(arr, 1000);
+
+        final double endTime = System.nanoTime() / 1000000;
+
+        System.out.println("Counting sort: " + (endTime - startTime) + "ms");
     }
 }

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <chrono>
 #define N 1000
 #define RANGE 1000
 
@@ -31,5 +32,13 @@ int main() {
         fscanf(input, "%d", &num);
         arr[i] = num;
     }
+
+    auto start = std::chrono::system_clock::now();
+
     countingSort(arr, len);
+
+    auto end = std::chrono::system_clock::now();
+    std::chrono::duration<double> elapsed_seconds = end-start;
+
+    std::cout << "Counting sort: " << elapsed_seconds.count() << "s\n";
 }
