@@ -20,8 +20,8 @@ int main(){
     int len = N;
     int num;
 
-    // clock_t start, end;
-    // double insert_time;
+    clock_t start, end;
+    double insert_time;
     // FILE* outTime = fopen("tree-results.txt", "a");
 
     FILE* input = fopen("array.txt", "r");
@@ -32,12 +32,13 @@ int main(){
 
     Node *root = NULL;
 
-    // start = clock();
+    start = clock();
     for (int i = 0; i < N; i ++){
         root = insert(arr[i], root);
     }
-    // end = clock();
-    // insert_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+    end = clock();
+    insert_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("BSTInsert: %fms\n", insert_time);
     
     return 0;
 }

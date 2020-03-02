@@ -105,8 +105,14 @@ class BSTremove {
         for (int j = 0; j < arr.length - 1; j++){
             tree.insert(arr[j]);
         }
+
+        final double startTime = System.nanoTime() / 1000000;
+
         for (int j = 0; j < arr.length - 1; j++){
             tree.deleteKey(arr[j]);
         }
+        final double endTime = System.nanoTime() / 1000000;
+
+        System.out.println("BSTRemove: " + (endTime - startTime) + "ms");
     }
 }

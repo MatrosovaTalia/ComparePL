@@ -102,8 +102,14 @@ fun main(args : Array<String>){
     for (i in 0 until arr.lastIndex){
         tree.insert(arr[i])
     }
+        
+    val time = System.nanoTime();
 
     for (i in 0 until arr.lastIndex){
         tree.remove(arr[i])
     }
+
+    val timeMilli = (System.nanoTime() - time) / 1000000
+
+    println("BSTRemove: $timeMilli ms")
 }

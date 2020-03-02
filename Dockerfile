@@ -1,4 +1,4 @@
-FROM picroc/lang_driver:0.2
+FROM picroc/lang_driver:0.4
 
 # RUN apt-get update
 
@@ -12,6 +12,8 @@ FROM picroc/lang_driver:0.2
 # ENV PATH=$PATH:~/swift/swift-5.1.4-RELEASE-ubuntu18.04/usr/bin
 
 # RUN ~/swift/swift-5.1.4-RELEASE-ubuntu18.04/usr/bin/swift --version
+
+# RUN apt-get install time -y
 
 ADD . /app
 WORKDIR /app

@@ -36,10 +36,15 @@ int main(){
         root = insert(arr[i], root);
     }
     
-    
+    clock_t start, end;
+    double insert_time;
+    start = clock();
     for (int i = 0; i < N; i++){
         removeKey(arr[i], root);
     }
+    end = clock();
+    insert_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("BSTRemove: %fms\n", insert_time);
 
     return 0;
 }

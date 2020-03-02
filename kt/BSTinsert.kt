@@ -54,8 +54,14 @@ fun main(args : Array<String>){
         arr[j++] = scanner.nextInt()
     }
 
+    val time = System.nanoTime();
+
     for (i in 0 until arr.lastIndex){
         tree.insert(arr[i])
     }
+
+    val timeMilli = (System.nanoTime() - time) / 1000000
+
+    println("BSTInsert: $timeMilli ms")
 
 }

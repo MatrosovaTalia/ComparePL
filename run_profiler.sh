@@ -11,55 +11,58 @@ echo "" > $progs
 
 for f in "js"/*.js
 do
-	echo "Profiling $f" >> $res
-	node $f >> $res
-	echo "" >> $res
+	echo "Profiling $f"
+	node $f
+	\time -v node $f 2>&1 >/dev/null
+	echo ""
 done
 
 # for swift execution
 
 for f in "swift"/*.swift
 do
-	echo "Profiling $f" >> $res
-	swift $f >> $res
-	echo "" >> $res
+	echo "Profiling $f"
+	swift $f
+	\time -v ~/swift/swift-5.1.4-RELEASE-ubuntu18.04/usr/bin/swift $f 2>&1 >/dev/null
+	# pmap -x `ps -ef | grep swift | awk '{print $2}'`
+	echo ""
 done
 
 # for c compilation and execution
 for f in "c"/*.c
 do
-	echo "Profiling $f" >> $res
+	echo "Profiling $f"
 	echo "$f" >> $progs
 	gcc $f -o ${f%.c}.out
-	{ time ./"${f%.c}.out" ; } 2>> $res
-	# { /usr/bin/time -f "\t%M max memory consumption" ./"${f%.c}.out" ; } 2>> $res
+	./"${f%.c}.out"
+	\time -v ./"${f%.c}.out" 2>&1 >/dev/null
 	rm "${f%.c}.out"	
-	echo "" >> $res	
+	echo ""
 done
 
 # for cpp compilation and execution
 for f in "cpp"/*.cpp
 do
-	echo "Profiling $f" >> $res
+	echo "Profiling $f"
 	echo "$f" >> $progs
 	g++ -o ${f%.cpp}.out $f
-	{ time ./"${f%.cpp}.out" ; } 2>> $res
-	# { /usr/bin/time -f "\t%M max memory consumption" ./"${f%.cpp}.out" ; } 2>> $res
+	./"${f%.cpp}.out"
+	\time -v ./"${f%.cpp}.out" 2>&1 >/dev/null
 	rm "${f%.cpp}.out"	
-	echo "" >> $res		
+	echo ""	
 done
 
 
 # for kotlin compilation and execution
 for f in "kt"/*.kt
 do
-	echo "Profiling $f" >> $res
+	echo "Profiling $f"
 	echo "$f" >> $progs
 	kotlinc $f -include-runtime -d ${f%.kt}.jar
-	{ time java -jar ${f%.kt}.jar ; } 2>> $res
-	# { /usr/bin/time -f "\t%M max memory consumption" java -jar ${f%.kt}.jar ; } 2>> $res
+	java -jar ${f%.kt}.jar
+	\time -v java -jar ${f%.kt}.jar 2>&1 >/dev/null
 	rm "${f%.kt}.jar"
-	echo "" >> $res
+	echo ""
 
 done
 
@@ -67,11 +70,11 @@ done
 # for java execution 
 for f in "java"/*.java
 do
-	echo "Profiling $f" >> $res
-	{ time java $f ; } 2>> $res
+	echo "Profiling $f"
+	java $f
 	echo "$f" >> $progs
-	# { /usr/bin/time -f "\t%M max memory consumption" java $f ; } 2>> $res
+	\time -v java $f 2>&1 >/dev/null
 	echo "" >> $res
 done
 
-cat $res
+# cat $res

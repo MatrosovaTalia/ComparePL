@@ -25,5 +25,10 @@ fun main(args : Array<String>){
         arr[i++] = scanner.nextInt()
     }
 
+    val time = System.nanoTime();
     insertion_sort(arr)
+
+    val timeMilli = (System.nanoTime() - time) / 1000000
+
+    println("Insertion sort: $timeMilli ms")
 }

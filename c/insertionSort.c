@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <time.h>
 #define N 1000
 
 void insertionSort(int arr[], int len);
@@ -14,7 +17,17 @@ int main(){
         fscanf(input, "%d", &num);
         arr[i] = num;
     }
+
+    clock_t start, end;
+    double insert_time;
+    start = clock();
+
     insertionSort(arr, len);
+
+    end = clock();
+    insert_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("Insertion sort: %fms\n", insert_time);
+
     return 0;
 
 }

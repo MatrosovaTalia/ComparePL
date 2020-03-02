@@ -57,8 +57,14 @@ class BSTinsert {
         while (scanner.hasNextInt()) {
             arr[i++] = scanner.nextInt();
         }
+
+        final double startTime = System.nanoTime() / 1000000;
+
         for (int j = 0; j < arr.length - 1; j++) {
             tree.insert(arr[j]);
         }
+        final double endTime = System.nanoTime() / 1000000;
+
+        System.out.println("BSTInsert: " + (endTime - startTime) + "ms");
     }
 }
