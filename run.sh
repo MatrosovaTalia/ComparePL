@@ -1,6 +1,6 @@
 #!/bin/bash
 
-res="results.txt"
+res="results.md"
 
 echo "" > $res
 

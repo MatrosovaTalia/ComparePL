@@ -25,7 +25,7 @@ int main(){
 
     end = clock();
     insert_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("Merge sort: %fms\n", insert_time);
+    printf("%f\n", insert_time);
 
     return 0;
 }

@@ -17,9 +17,9 @@ const countingSort = (arr) => {
 }
 
 const measureTime = (func, name) => (...args) => {
-	console.time(name);
+	const s = Date.now();
 	func(...args);
-	console.timeEnd(name);
+	console.log(Date.now() - s);
 }
 
 const fs = require('fs');

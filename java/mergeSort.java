@@ -62,6 +62,6 @@ public class mergeSort {
         obj.merge_sort(arr, 0, arr.length - 1);
         final double endTime = System.nanoTime() / 1000000;
 
-        System.out.println("Merge sort: " + (endTime - startTime) + "ms");
+        System.out.println((endTime - startTime));
     }
 }

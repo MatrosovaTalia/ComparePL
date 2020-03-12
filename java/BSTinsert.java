@@ -65,6 +65,6 @@ class BSTinsert {
         }
         final double endTime = System.nanoTime() / 1000000;
 
-        System.out.println("BSTInsert: " + (endTime - startTime) + "ms");
+        System.out.println((endTime - startTime));
     }
 }

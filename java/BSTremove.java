@@ -113,6 +113,6 @@ class BSTremove {
         }
         final double endTime = System.nanoTime() / 1000000;
 
-        System.out.println("BSTRemove: " + (endTime - startTime) + "ms");
+        System.out.println((endTime - startTime));
     }
 }

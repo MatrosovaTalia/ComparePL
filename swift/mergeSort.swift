@@ -49,5 +49,5 @@ let lines : [Float] = text.components(separatedBy: " ").map { Float($0)!}
 let startTime = Date().timeIntervalSinceReferenceDate
 var result = mergeSort(lines)
 let timeElapsed = (Date().timeIntervalSinceReferenceDate - startTime) * 1000
-print("Merge sort: \(timeElapsed)ms.")
+print("\(timeElapsed)")
 

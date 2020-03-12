@@ -7,74 +7,82 @@ progs="programs.txt"
 echo "" > $res
 echo "" > $progs
 
+echo "##" >> $res
 # for js execution
-
+echo "JavaScript" >> $res
 for f in "js"/*.js
 do
-	echo "Profiling $f"
-	node $f
-	\time -v node $f 2>&1 >/dev/null
-	echo ""
+	NAME=$(basename $f .js)
+	echo "${NAME}" >> $res
+	node $f >> $res
+	\time -f "%M %R %c %w" node $f 2>>$res >/dev/null
 done
-
+echo "##" >> $res
 # for swift execution
-
+echo "Swift" >> $res
 for f in "swift"/*.swift
 do
-	echo "Profiling $f"
-	swift $f
-	\time -v ~/swift/swift-5.1.4-RELEASE-ubuntu18.04/usr/bin/swift $f 2>&1 >/dev/null
+	NAME=$(basename $f .swift)
+	echo "${NAME}" >> $res
+	swift $f >> $res
+	\time -f "%M %R %c %w" ~/swift/swift-5.1.4-RELEASE-ubuntu18.04/usr/bin/swift $f 2>>$res >/dev/null
 	# pmap -x `ps -ef | grep swift | awk '{print $2}'`
-	echo ""
 done
 
+echo "##" >> $res
 # for c compilation and execution
+echo "C" >> $res
 for f in "c"/*.c
 do
-	echo "Profiling $f"
+	NAME=$(basename $f .c)
+	echo "${NAME}" >> $res
 	echo "$f" >> $progs
 	gcc $f -o ${f%.c}.out
-	./"${f%.c}.out"
-	\time -v ./"${f%.c}.out" 2>&1 >/dev/null
+	./"${f%.c}.out" >> $res
+	\time -f "%M %R %c %w" ./"${f%.c}.out" 2>>$res >/dev/null
 	rm "${f%.c}.out"	
-	echo ""
 done
 
+echo "##" >> $res
 # for cpp compilation and execution
+echo "C++" >> $res
 for f in "cpp"/*.cpp
 do
-	echo "Profiling $f"
+	NAME=$(basename $f .cpp)
+	echo "${NAME}" >> $res
 	echo "$f" >> $progs
 	g++ -o ${f%.cpp}.out $f
-	./"${f%.cpp}.out"
-	\time -v ./"${f%.cpp}.out" 2>&1 >/dev/null
+	./"${f%.cpp}.out" >> $res
+	\time -f "%M %R %c %w" ./"${f%.cpp}.out" 2>>$res >/dev/null
 	rm "${f%.cpp}.out"	
-	echo ""	
 done
 
+echo "##" >> $res
 
 # for kotlin compilation and execution
+echo "Kotlin" >> $res
 for f in "kt"/*.kt
 do
-	echo "Profiling $f"
+	NAME=$(basename $f .kt)
+	echo "${NAME}" >> $res
 	echo "$f" >> $progs
 	kotlinc $f -include-runtime -d ${f%.kt}.jar
-	java -jar ${f%.kt}.jar
-	\time -v java -jar ${f%.kt}.jar 2>&1 >/dev/null
+	java -jar ${f%.kt}.jar >> $res
+	\time -f "%M %R %c %w" java -jar ${f%.kt}.jar 2>>$res >/dev/null
 	rm "${f%.kt}.jar"
-	echo ""
-
 done
 
+echo "##" >> $res
 
 # for java execution 
+echo "Java" >> $res
 for f in "java"/*.java
 do
-	echo "Profiling $f"
-	java $f
+	NAME=$(basename $f .java)
+	echo "${NAME}" >> $res
+	java $f >> $res
 	echo "$f" >> $progs
-	\time -v java $f 2>&1 >/dev/null
-	echo "" >> $res
+	\time -f "%M %R %c %w" java $f 2>>$res >/dev/null
 done
 
-# cat $res
+python3 formatter.py

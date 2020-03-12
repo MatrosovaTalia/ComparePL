@@ -28,4 +28,4 @@ let lines : [Int] = text.components(separatedBy: " ").map { Int($0)!}
 let startTime = Date().timeIntervalSinceReferenceDate
 var result = countingSort(lines)
 let timeElapsed = (Date().timeIntervalSinceReferenceDate - startTime) * 1000
-print("Counting sort: \(timeElapsed)ms.")
+print("\(timeElapsed)")

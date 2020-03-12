@@ -28,6 +28,6 @@ public class insertionSort {
         insertionSort(arr);
         final double endTime = System.nanoTime() / 1000000;
 
-        System.out.println("Insertion sort: " + (endTime - startTime) + "ms");
+        System.out.println((endTime - startTime));
     }
 }
