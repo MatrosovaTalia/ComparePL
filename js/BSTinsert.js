@@ -112,9 +112,9 @@ class BinarySearchTree {
 }
 
 const measureTime = (func, name) => (...args) => {
-	console.time(name);
+	const s = Date.now();
 	func.addNode(...args);
-	console.timeEnd(name);
+	console.log(Date.now() - s);
 }
 
 const binTree = new BinarySearchTree();

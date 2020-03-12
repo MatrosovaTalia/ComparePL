@@ -66,6 +66,6 @@ fun main(args : Array<String>){
 
     val timeMilli = (System.nanoTime() - time) / 1000000
 
-    println("Merge sort: $timeMilli ms")
+    println("$timeMilli")
 
 }

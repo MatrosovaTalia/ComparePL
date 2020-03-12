@@ -41,6 +41,6 @@ public class countingSort {
 
         final double endTime = System.nanoTime() / 1000000;
 
-        System.out.println("Counting sort: " + (endTime - startTime) + "ms");
+        System.out.println((endTime - startTime));
     }
 }

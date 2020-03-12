@@ -36,9 +36,9 @@ for (let i = 0; i < 10000; i++) {
 }
 
 const measureTime = (func, name) => (...args) => {
-	console.time(name);
+	const s = Date.now();
 	func(...args);
-	console.timeEnd(name);
+	console.log(Date.now() - s);
 }
 
 const fs = require('fs');
