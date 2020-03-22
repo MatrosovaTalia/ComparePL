@@ -111,10 +111,11 @@ class BinarySearchTree {
 	}
 }
 
+const {performance} = require('perf_hooks');
 const measureTime = (func, name) => (...args) => {
-	const s = Date.now();
+	const s = performance.now();
 	func.addNode(...args);
-	console.log(Date.now() - s);
+	console.log(performance.now() - s);
 }
 
 const binTree = new BinarySearchTree();

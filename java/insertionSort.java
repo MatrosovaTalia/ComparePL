@@ -15,7 +15,7 @@ public class insertionSort {
     }
 
     public static void main(String[] args) throws IOException {
-        final int N = 1000;
+        final int N = 10000;
         File array = new File("array.txt");
         Scanner scanner = new Scanner(array);
         int [] arr = new int [N];

@@ -50,7 +50,7 @@ state = 0
 current_lang = ''
 current_algo = ''
 
-max_symbols = 6
+max_symbols = 8
 
 for line in f.readlines():
 	if(line.strip() == '##'):

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <chrono>
-#define N 1000
+#define N 10000
 using namespace std;
 
 void insertionSort(int arr[], int len){

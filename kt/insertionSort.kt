@@ -15,7 +15,7 @@ fun insertion_sort(arr: IntArray): Unit{
 
 fun main(args : Array<String>){
 
-    val N = 1000
+    val N = 10000
     val arrayContent = File("array.txt")
     var scanner = Scanner(arrayContent)
     val arr = IntArray(N)

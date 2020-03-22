@@ -1,7 +1,7 @@
 import java.io.File
 import java.util.*
 
-fun counting_sort(arr: IntArray, range: Int = 1000): Unit{
+fun counting_sort(arr: IntArray, range: Int = 100000): Unit{
     val count = IntArray(range)
     for (element in arr){
         count[element]++
@@ -18,7 +18,7 @@ fun counting_sort(arr: IntArray, range: Int = 1000): Unit{
 
 fun main(args : Array<String>) {
 
-    val N = 1000
+    val N = 10000
     val arrayContent = File("array.txt")
     var scanner = Scanner(arrayContent)
     val arr = IntArray(N)
@@ -31,7 +31,7 @@ fun main(args : Array<String>) {
     val time = System.nanoTime();
     counting_sort(arr)
 
-    val timeMilli = (System.nanoTime() - time) / 1000000
+    val timeMilli = (System.nanoTime() - time) / 1000000.0f
 
     println("$timeMilli")
 }

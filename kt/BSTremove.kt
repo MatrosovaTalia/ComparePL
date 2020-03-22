@@ -89,7 +89,7 @@ class BST(var root: Node? = null) {
 
 fun main(args : Array<String>){
     val tree = BST()
-    val N = 1000
+    val N = 10000
     val arrayContent = File("array.txt")
     var scanner = Scanner(arrayContent)
     val arr = IntArray(N)
@@ -109,7 +109,7 @@ fun main(args : Array<String>){
         tree.remove(arr[i])
     }
 
-    val timeMilli = (System.nanoTime() - time) / 1000000
+    val timeMilli = (System.nanoTime() - time) / 1000000.0f
 
     println("$timeMilli")
 }
