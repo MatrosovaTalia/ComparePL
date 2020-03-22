@@ -16,10 +16,11 @@ const arr = [];
 for (let i = 0; i < 10000; i++) {
 	arr.push(Math.floor(Math.random() * 500));
 }
+const {performance} = require('perf_hooks');
 const measureTime = (func, name) => (...args) => {
-	const s = Date.now();
+	const s = performance.now();
 	func(...args);
-	console.log(Date.now() - s);
+	console.log(performance.now() - s);
 }
 
 const fs = require('fs');

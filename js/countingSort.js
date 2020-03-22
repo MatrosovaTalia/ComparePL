@@ -16,10 +16,11 @@ const countingSort = (arr) => {
 	return res;
 }
 
+const {performance} = require('perf_hooks');
 const measureTime = (func, name) => (...args) => {
-	const s = Date.now();
+	const s = performance.now();
 	func(...args);
-	console.log(Date.now() - s);
+	console.log(performance.now() - s);
 }
 
 const fs = require('fs');

@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string.h>
 #include <chrono>
-#define N 1000
-#define RANGE 1000
+#define N 10000
+#define RANGE 100000
 
 using namespace std;
 

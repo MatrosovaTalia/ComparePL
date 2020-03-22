@@ -1,6 +1,12 @@
 #!/bin/bash
 
-res="results.md"
+res=""
+if [ -z $1 ]
+then
+	res="results.md"
+else
+	res=$1
+fi
 
 echo "" > $res
 

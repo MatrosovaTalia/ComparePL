@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <time.h>
-#define N 1000
+#define N 10000
 
 void merge(int arr[], int l, int m, int r);
 void mergeSort(int arr[], int l, int r);
