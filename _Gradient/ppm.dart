@@ -16,13 +16,13 @@ List generateGrayGradient(h, w, a, b){
 }
 
 void saveGradient(arr, h, w, b){
-	print("P2\n$w $h\n$b");
+// 	print("P2\n$w $h\n$b");
 	for(var i = 0; i < h; i++){
     var str = "";
 		for(var j = 0; j < w; j++){
 			str += arr[i * w + j].toString() + " ";
 		}
-		print(str);
+// 		print(str);
 	}
 }
 
@@ -31,6 +31,8 @@ void main() {
 	var w = 10;
   var a = 55;
 	var b = 233;
+  Stopwatch stopwatch = new Stopwatch()..start();
   var arr = generateGrayGradient(h, w, a, b);
 	saveGradient(arr, h, w, b);
+  print(stopwatch.elapsedMicroseconds); // executing time in microseconds
 }
