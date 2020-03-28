@@ -42,7 +42,7 @@ fun main(args : Array<String>) {
     val timeMilli = (System.nanoTime() - time) / 1000000
 
     println("$timeMilli")
-    println()
+    // println()
 
     // saveGradient(arr, h, w, b)
 }
