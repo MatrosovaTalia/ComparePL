@@ -1,10 +1,9 @@
 void main() {
   var arr = [10, 20, 3, 6, 1, 0];
   
-  print(arr);
   Stopwatch stopwatch = new Stopwatch()..start();
-  print(merge(arr));
-  print('Sort executed in ${stopwatch.elapsed}');
+  merge(arr);
+  print('${stopwatch.elapsedMicroseconds / 1000}');
 }
 
 List merge(arr){

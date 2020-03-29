@@ -56,13 +56,15 @@ class Tree {
 
 void main() {
   var newTree = Tree();
+  Stopwatch stopwatch = new Stopwatch()..start();
   newTree.add(5);
   newTree.add(3);
   newTree.add(6);
   newTree.add(1);
-  print(newTree.isHere(5));
-  print(newTree.isHere(3));
-  print(newTree.isHere(6));
-  print(newTree.isHere(1));
-  print(newTree.isHere(2));
+  newTree.isHere(5);
+  newTree.isHere(3);
+  newTree.isHere(6);
+  newTree.isHere(1);
+  newTree.isHere(2);
+  print('${stopwatch.elapsedMicroseconds / 1000}');
 }

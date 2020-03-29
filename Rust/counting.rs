@@ -4,9 +4,9 @@ fn main() {
 	let mut vec = vec![10, 20, 3, 6, 1, 0];
 	let L = vec.len();
 
-	for x in &vec {
-		print!("{} ", x);
-	}
+	// for x in &vec {
+	// 	print!("{} ", x);
+	// }
 
 	let start = Instant::now();
 	let mut max = vec[0];
@@ -29,10 +29,10 @@ fn main() {
 	}
 	let duration = start.elapsed();
 
-	println!("");
-	for x in &result {
-		print!("{} ", x);
-	}
+	// println!("");
+	// for x in &result {
+	// 	print!("{} ", x);
+	// }
 
-	println!("\nTime elapsed in expensive_function() is: {:?}", duration);
+	println!("{:?}", duration);
 }
