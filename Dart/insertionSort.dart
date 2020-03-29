@@ -1,6 +1,12 @@
+import "dart:io";
+
 void main() {
-  var arr = [10, 20, 3, 6, 1, 0];
-  var L = arr.length;
+  File myFile = new File("array.txt");
+  String myFileContent = myFile.readAsStringSync();
+  List<String> mylist = myFileContent.split(' ');
+  var arr = [];
+  var L = mylist.length;
+  for (var i = 0; i < L; i++) arr.add(int.parse(mylist[i]));
 
   Stopwatch stopwatch = new Stopwatch()..start();
   for (var i = 1; i < L; i++) {
@@ -12,5 +18,5 @@ void main() {
     }
     arr[j] = buf;
   }
-  print('${stopwatch.elapsedMicroseconds / 1000}');
+  print(stopwatch.elapsedMicroseconds); // executing time in microseconds
 }
