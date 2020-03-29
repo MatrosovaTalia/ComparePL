@@ -2,8 +2,6 @@ void main() {
   var arr = [10, 20, 3, 6, 1, 0];
   var L = arr.length;
 
-  print(arr);
-
   Stopwatch stopwatch = new Stopwatch()..start();
   for (var i = 1; i < L; i++) {
     var j = i;
@@ -14,7 +12,5 @@ void main() {
     }
     arr[j] = buf;
   }
-  print('Sort executed in ${stopwatch.elapsed}');
-
-  print(arr);
+  print('${stopwatch.elapsedMicroseconds / 1000}');
 }

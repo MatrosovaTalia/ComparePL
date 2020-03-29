@@ -2,8 +2,6 @@ void main() {
   var arr = [10, 20, 3, 6, 1, 0];
   var L = arr.length;
 
-  print(arr);
-
   Stopwatch stopwatch = new Stopwatch()..start();
   var max = arr[0];
   for (var i = 1; i < L; i++) {
@@ -23,7 +21,5 @@ void main() {
     result[cv[arr[i]] - 1] = arr[i];
     cv[arr[i]] -= 1;
   }
-  print('Sort executed in ${stopwatch.elapsed}');
-  
-  print(result);
+  print('${stopwatch.elapsedMicroseconds / 1000}');
 }

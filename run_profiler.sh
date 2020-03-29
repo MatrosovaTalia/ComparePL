@@ -7,6 +7,9 @@ progs="programs.txt"
 echo "" > $res
 echo "" > $progs
 
+# DO NOTHING IF NO FILES
+shopt -s nullglob
+
 echo "##" >> $res
 # for js execution
 echo "JavaScript" >> $res
@@ -84,5 +87,51 @@ do
 	echo "$f" >> $progs
 	\time -f "%M %R %c %w" java $f 2>>$res >/dev/null
 done
+
+echo "##" >> $res
+
+# for Go compilation and execution
+echo "Go" >> $res
+for f in "go"/*.go
+do
+	NAME=$(basename $f .go)
+	echo "${NAME}" >> $res
+	echo "$f" >> $progs
+	go build $f
+	./"${NAME}" >> $res
+	\time -f "%M %R %c %w" ./"${NAME}" 2>>$res >/dev/null
+	rm "${NAME}"	
+done
+
+echo "##" >> $res
+
+# for Dart compilation and execution
+echo "Dart" >> $res
+for f in "Dart"/*.dart
+do
+	NAME=$(basename $f .dart)
+	echo "${NAME}" >> $res
+	echo "$f" >> $progs
+	dart2native $f -o $NAME > /dev/null
+	./"${NAME}" >> $res
+	\time -f "%M %R %c %w" ./"${NAME}" 2>>$res >/dev/null
+	rm "${NAME}"	
+done
+
+# TODO FIX DART OUTPUT
+# echo "##" >> $res
+
+# # for Rust compilation and execution
+# echo "Rust" >> $res
+# for f in "Rust"/*.rs
+# do
+# 	NAME=$(basename $f .rs)
+# 	echo "${NAME}" >> $res
+# 	echo "$f" >> $progs
+# 	~/.cargo/bin/rustc $f
+# 	./"${NAME}" >> $res
+# 	\time -f "%M %R %c %w" ./"${NAME}" 2>>$res >/dev/null
+# 	rm "${NAME}"	
+# done
 
 python3 formatter.py

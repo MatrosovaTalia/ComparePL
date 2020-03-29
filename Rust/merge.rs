@@ -4,20 +4,20 @@ fn main() {
 	let mut vec = vec![10, 20, 3, 6, 1, 0];
 	let L = vec.len();
 
-	for x in &vec {
-		print!("{} ", x);
-	}
+	// for x in &vec {
+	// 	print!("{} ", x);
+	// }
 
 	let start = Instant::now();
 	vec = merge(vec.clone());
 	let duration = start.elapsed();
 
-	println!("");
-	for x in &vec {
-		print!("{} ", x);
-	}
+	// println!("");
+	// for x in &vec {
+	// 	print!("{} ", x);
+	// }
 
-	println!("\nTime elapsed in expensive_function() is: {:?}", duration);
+	println!("{:?}", duration);
 }
 
 fn merge(mut vec: Vec<i32>) -> Vec<i32>{
