@@ -1,70 +1,59 @@
-class Leaf {
-  num value;
-  Leaf left;
-  Leaf right;
+import "dart:io";
 
-  Leaf(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
+class Node {
+  int key;
+  Node left, right;
+
+  Node(int item) {
+    key = item;
+    left = right = null;
   }
 }
 
-class Tree {
-  Leaf root;
+class BSTinsert {
+// Root of BST
+  Node root;
 
-  Tree() {
-    this.root = null;
+// Constructor
+  BSTinsert() {
+    root = null;
   }
 
-  void add(value) {
-    var newLeaf = Leaf(value);
-    if (this.root == null)
-      this.root = newLeaf;
-    else {
-      var current = this.root;
-      while (true) {
-        if (value <= current.value && current.left == null) {
-          current.left = newLeaf;
-          break;
-        } else if (value > current.value && current.right == null) {
-          current.right = newLeaf;
-          break;
-        } else {
-          if (value <= current.value)
-            current = current.left;
-          else
-            current = current.right;
-        }
-      }
-    }
+// This method mainly calls insertRec()
+  void insert(int key) {
+    root = insertRec(root, key);
   }
-  
-  bool isHere(value){
-    var current = this.root;
-    while(current != null){
-      if(current.value == value)
-        return true;
-      if(value <= current.value)
-        current = current.left;
-      else
-        current = current.right;
+
+/* A recursive function to insert a new key in BST */
+  Node insertRec(Node root, int key) {
+    /* If the tree is empty, return a new node */
+    if (root == null) {
+      root = new Node(key);
+      return root;
     }
-    return false;
+
+    /* Otherwise, recursion down the tree */
+    if (key < root.key)
+      root.left = insertRec(root.left, key);
+    else if (key > root.key) root.right = insertRec(root.right, key);
+
+    /* return the (unchanged) node pointer */
+    return root;
   }
 }
 
 void main() {
-  var newTree = Tree();
+  var tree = new BSTinsert();
+  var N = 5;
+  File myFile = new File("array.txt");
+  String myFileContent = myFile.readAsStringSync();
+  List<String> mylist = myFileContent.split(' ');
+  var arr = [];
+  for (var i = 0; i < N; i++) arr.add(int.parse(mylist[i]));
+
   Stopwatch stopwatch = new Stopwatch()..start();
-  newTree.add(5);
-  newTree.add(3);
-  newTree.add(6);
-  newTree.add(1);
-  newTree.isHere(5);
-  newTree.isHere(3);
-  newTree.isHere(6);
-  newTree.isHere(1);
-  newTree.isHere(2);
-  print('${stopwatch.elapsedMicroseconds / 1000}');
+
+  for (var i = 0; i < N; i++) tree.insert(arr[i]);
+
+  print(stopwatch.elapsedMicroseconds); // executing time in microseconds
 }
