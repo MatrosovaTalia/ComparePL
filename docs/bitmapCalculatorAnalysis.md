@@ -75,9 +75,18 @@ fun main(args : Array<String>) {
 }
 ```
 
-Kotlin maintain the java naming for classes and uses java libraries. It is easy to read for those, who get used to C and Java programming languages. The end line separators (semi columns) are not obligatory in Kotlin, so there will be less mistakes that are connected to end line typos. However, due to this "not obligatory semi columns" thing there is a huge probability of messy code with mixed style line. One may want to add end line separators, the others do not.
-
-The length of the Kotlin code is approximately the same as Go code (31 lines Kotlin vs 32 lines Go) among the represented ones (31 lines). It is worth to mention that it became shorter than Java code and it is easier to read. Comparing to Go and Dart Kotlin code seems to be cleaner and more human-readable.
+Kotlin maintain the java naming for classes and uses java libraries. It is easy to read for those,
+who get used to C and Java programming languages. The end line separators (semi columns) are
+not obligatory in Kotlin, so there will be less mistakes that are connected to end line typos.
+However, due to this "not obligatory semi columns" thing there is a huge probability of messy
+code with mixed style line. One may want to add end line separators, the others do not.
+The external functionality: kotlin uses java libraries for input/output operations and for some
+types (Strings, for example). In addition, now (april 2020), unsigned byte types as well as arrays
+are running under "experimental mode".
+The length of the Kotlin code is approximately the same as Go code (31 lines Kotlin vs 32 lines Go)
+among the represented ones (31 lines). It is worth to mention that it became shorter than Java
+code and it is easier to read. Comparing to Go and Dart Kotlin code seems to be cleaner and
+more human-readable.
 
 #### Go 
 
@@ -116,9 +125,16 @@ func main() {
 }
 ```
 
-The length of the code is approximately the same as the Kotlin code. The good thing about go is that there are no any  end line separators and at the same time functions are wrapped into curly braces, so the code is easier to read. It is clear where the function starts and ends.  On the other hand, the variable declaration with ':=' sign seems to be too complicated. In addition, speaking about declarations: to declare an array one must put brackets before the type of the array content. It is interesting decision but from my point of view this makes the code more difficult to read. In general code is "not great, not terrible". It is not understandable for human and number of special symbols is low.
-
-
+The length of the code is approximately the same as the Kotlin code. The good thing about go is
+that there are no any end line separators and at the same time functions are wrapped into curly
+braces, so the code is easier to read. It is clear where the function starts and ends. On the other
+hand, the variable declaration with ':=' sign seems to be too complicated. In addition, speaking
+about declarations: to declare an array one must put brackets before the type of the array
+content. It is interesting decision but from my point of view this makes the code more difficult to
+read. Speaking about external functionality: go uses "fmt" package for formatted input/output
+operations (analogous to C's printf and scanf).
+In general code is "not great, not terrible". It is not understandable for human and number of
+special symbols is low.
 
 #### Dart
 
@@ -151,5 +167,9 @@ void main() {
 }
 ```
 
-Dart code is the shortest among the sample ones (26 lines).  Although there are end line separators (semi columns), the code seems to be clean. It is easy to read. The functions are wrapped in the curly braces, as in many other programming languages. The names of built-in types are short and clearly state what the type is. 
+Dart code is the shortest among the sample ones (26 lines). Although there are end line
+separators (semi columns), the code seems to be clean. It is easy to read. The functions are
+wrapped in the curly braces, as in many other programming languages. The names of built-in
+types are short and clearly state what the type is. The external functionality: dart does not
+require additional imports to perform input/output operations, print function is built-in.
 
