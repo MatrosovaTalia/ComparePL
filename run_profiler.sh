@@ -118,7 +118,7 @@ do
 	rm "${NAME}"	
 done
 
-# TODO FIX DART OUTPUT
+# TODO FIX RUST OUTPUT
 # echo "##" >> $res
 
 # # for Rust compilation and execution

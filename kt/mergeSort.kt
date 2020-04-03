@@ -64,7 +64,7 @@ fun main(args : Array<String>){
     val time = System.nanoTime();
     merge_sort(arr, 0, arr.lastIndex)
 
-    val timeMilli = (System.nanoTime() - time) / 1000000
+    val timeMilli = (System.nanoTime() - time) / 1000000.0f
 
     println("$timeMilli")
 
