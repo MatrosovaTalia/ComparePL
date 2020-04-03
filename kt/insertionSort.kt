@@ -28,7 +28,7 @@ fun main(args : Array<String>){
     val time = System.nanoTime();
     insertion_sort(arr)
 
-    val timeMilli = (System.nanoTime() - time) / 1000000
+    val timeMilli = (System.nanoTime() - time) / 1000000.0f
 
     println("$timeMilli")
 }

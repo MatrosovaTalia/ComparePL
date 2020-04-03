@@ -60,7 +60,7 @@ fun main(args : Array<String>){
         tree.insert(arr[i])
     }
 
-    val timeMilli = (System.nanoTime() - time) / 1000000
+    val timeMilli = (System.nanoTime() - time) / 1000000.0f
 
     println("$timeMilli")
 
