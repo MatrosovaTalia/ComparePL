@@ -17,4 +17,5 @@ FROM picroc/lang_driver:0.5
 
 ADD . /app
 WORKDIR /app
+
 ENTRYPOINT [ "bash" , "run_profiler.sh" , "run" ]

@@ -96,5 +96,5 @@ void main() {
 
   for (var i = 0; i < N; i++) tree.deleteKey(arr[i]);
 
-  print(stopwatch.elapsedMicroseconds); // executing time in microseconds
+  print(stopwatch.elapsedMicroseconds.toDouble() / 1000); // executing time in microseconds
 }

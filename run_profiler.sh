@@ -119,9 +119,10 @@ do
 done
 
 # TODO FIX RUST OUTPUT
+
 # echo "##" >> $res
 
-# # for Rust compilation and execution
+# for Rust compilation and execution
 # echo "Rust" >> $res
 # for f in "Rust"/*.rs
 # do
