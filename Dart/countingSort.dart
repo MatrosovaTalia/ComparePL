@@ -27,5 +27,5 @@ void main() {
     result[cv[arr[i]] - 1] = arr[i];
     cv[arr[i]] -= 1;
   }
-  print(stopwatch.elapsedMicroseconds); // executing time in microseconds
+  print(stopwatch.elapsedMicroseconds.toDouble() / 1000); // executing time in microseconds
 }
