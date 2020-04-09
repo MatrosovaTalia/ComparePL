@@ -35,11 +35,11 @@ public class countingSort {
         }
         countingSort obj = new countingSort();
 
-        final double startTime = System.nanoTime() / 1000000.0f;
+        final double startTime = System.nanoTime() / 1000000.0;
 
         obj.counting_sort(arr, 100000);
 
-        final double endTime = System.nanoTime() / 1000000.0f;
+        final double endTime = System.nanoTime() / 1000000.0;
 
         System.out.println((endTime - startTime));
     }

@@ -106,12 +106,12 @@ class BSTremove {
             tree.insert(arr[j]);
         }
 
-        final double startTime = System.nanoTime() / 1000000;
+        final double startTime = System.nanoTime() / 1000000.0;
 
         for (int j = 0; j < arr.length - 1; j++){
             tree.deleteKey(arr[j]);
         }
-        final double endTime = System.nanoTime() / 1000000;
+        final double endTime = System.nanoTime() / 1000000.0;
 
         System.out.println((endTime - startTime));
     }

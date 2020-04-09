@@ -24,9 +24,9 @@ public class insertionSort {
         while(scanner.hasNextInt()){
             arr[i++] = scanner.nextInt();
         }
-        final double startTime = System.nanoTime() / 1000000;
+        final double startTime = System.nanoTime() / 1000000.0;
         insertionSort(arr);
-        final double endTime = System.nanoTime() / 1000000;
+        final double endTime = System.nanoTime() / 1000000.0;
 
         System.out.println((endTime - startTime));
     }

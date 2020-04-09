@@ -58,9 +58,9 @@ public class mergeSort {
             arr[i++] = scanner.nextInt();
         }
         mergeSort obj = new mergeSort();
-        final double startTime = System.nanoTime() / 1000000;
+        final double startTime = System.nanoTime() / 1000000.0;
         obj.merge_sort(arr, 0, arr.length - 1);
-        final double endTime = System.nanoTime() / 1000000;
+        final double endTime = System.nanoTime() / 1000000.0;
 
         System.out.println((endTime - startTime));
     }
