@@ -1,45 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <string.h>
 #include <time.h>
 #define N 10000
+#define RANGE (int)1e6
 
-void insertionSort(int arr[], int len);
+void countingSort(int arr[], int len);
 
 int main(){
     int arr[N];
     int len = N;
     int num;
-    
 
-    FILE* input = fopen("array.txt", "r");
+    FILE* input = fopen("./array.txt", "r");
     for (int i = 0; i < N; i++){
         fscanf(input, "%d", &num);
         arr[i] = num;
     }
 
-    clock_t start, end;
-    double insert_time;
-    start = clock();
-
-    insertionSort(arr, len);
-
-    end = clock();
-    insert_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("%f\n", insert_time);
-
+    struct timespec start, end, elapsed;
+    clock_gettime(CLOCK_REALTIME, &start);
+    countingSort(arr, len);
+    clock_gettime(CLOCK_REALTIME, &end);
+    elapsed.tv_nsec = end.tv_nsec - start.tv_nsec;
+    elapsed.tv_sec  = end.tv_sec - start.tv_sec;
+    
+    printf ("%lf\n", 1000 * elapsed.tv_sec + elapsed.tv_nsec / 1e6);
     return 0;
-
 }
 
-void insertionSort(int arr[], int len){
-    for (int i = 1; i < len; i++){
-        int temp = arr[i];
-        int j = i - 1;
-        while(j >= 0 & arr[j] > temp){
-            arr[j + 1] = arr[j];
-            j--;
+
+void countingSort(int arr[], int len){
+    int count[RANGE];
+    memset(count, 0, sizeof(count));
+    for (int i = 0; i < len; i++){
+        count[arr[i]]++;
+    }
+    int k = 0;
+    for (int i = 0; i < RANGE; i++){
+        while(count[i] > 0){
+            arr[k] = i;
+            k++;
+            count[i]--;
         }
-        arr[j + 1] = temp;
     }
 }

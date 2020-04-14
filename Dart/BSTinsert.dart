@@ -44,7 +44,7 @@ class BSTinsert {
 
 void main() {
   var tree = new BSTinsert();
-  var N = 1000;
+  var N = 10000;
   File myFile = new File("array.txt");
   String myFileContent = myFile.readAsStringSync();
   List<String> mylist = myFileContent.split(' ');
@@ -55,5 +55,5 @@ void main() {
 
   for (var i = 0; i < N; i++) tree.insert(arr[i]);
 
-  print(stopwatch.elapsedMicroseconds.toDouble() / 1000); // executing time in microseconds
+  print(stopwatch.elapsedMicroseconds.toDouble() / 1000); // executing time in milliseconds
 }

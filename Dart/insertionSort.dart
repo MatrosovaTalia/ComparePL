@@ -18,5 +18,5 @@ void main() {
     }
     arr[j] = buf;
   }
-  print(stopwatch.elapsedMicroseconds.toDouble() / 1000); // executing time in microseconds
+  print(stopwatch.elapsedMicroseconds.toDouble() / 1000); 
 }

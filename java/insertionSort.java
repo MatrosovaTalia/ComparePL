@@ -16,7 +16,7 @@ public class insertionSort {
 
     public static void main(String[] args) throws IOException {
         final int N = 10000;
-        File array = new File("array.txt");
+        File array = new File("./array.txt");
         Scanner scanner = new Scanner(array);
         int [] arr = new int [N];
         int i = 0;
@@ -24,9 +24,9 @@ public class insertionSort {
         while(scanner.hasNextInt()){
             arr[i++] = scanner.nextInt();
         }
-        final double startTime = System.nanoTime() / 1000000;
+        final double startTime = System.nanoTime() / 1000000.0;
         insertionSort(arr);
-        final double endTime = System.nanoTime() / 1000000;
+        final double endTime = System.nanoTime() / 1000000.0;
 
         System.out.println((endTime - startTime));
     }

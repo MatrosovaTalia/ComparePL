@@ -40,7 +40,7 @@ do
 	NAME=$(basename $f .c)
 	echo "${NAME}" >> $res
 	echo "$f" >> $progs
-	gcc $f -o ${f%.c}.out
+	gcc $f -O2 -o ${f%.c}.out
 	./"${f%.c}.out" >> $res
 	\time -f "%M %R %c %w" ./"${f%.c}.out" 2>>$res >/dev/null
 	rm "${f%.c}.out"	
