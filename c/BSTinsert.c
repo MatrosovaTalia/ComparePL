@@ -38,7 +38,7 @@ int main(){
     }
     end = clock();
     insert_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("%f\n", insert_time);
+    printf("%f\n", insert_time * 1000);
     
     return 0;
 }

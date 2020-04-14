@@ -10,7 +10,7 @@ void main() {
 
   Stopwatch stopwatch = new Stopwatch()..start();
   arr = merge(arr);
-  print(stopwatch.elapsedMicroseconds.toDouble() / 1000); // executing time in microseconds
+  print(stopwatch.elapsedMicroseconds.toDouble() / 1000); // executing time in milliseconds
 }
 
 List merge(arr){

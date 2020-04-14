@@ -30,14 +30,7 @@ int main(){
             addEdge(graph, i, j);
         }
     }
-
-    // for (int i = 0; i < N - 1; i++){
-    //     for (int j = i + 1; j < N; j++){
-    //         addEdge(graph, i, j);
-    //     }
-    // }
-
-    
+   
     // printGraph(graph);
     clock_t start, end;
     double insert_time;
@@ -46,7 +39,7 @@ int main(){
     end = clock();
 
     double bfs_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("%f\n", bfs_time);
+    printf("%f\n", bfs_time * 1000);
     
     return 0;
 }

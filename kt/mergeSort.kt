@@ -52,7 +52,7 @@ fun merge_sort(arr: IntArray, l: Int, r: Int){
 fun main(args : Array<String>){
 
     val N = 10000
-    val arrayContent = File("array.txt")
+    val arrayContent = File("./array.txt")
     var scanner = Scanner(arrayContent)
     val arr = IntArray(N)
     var i = 0

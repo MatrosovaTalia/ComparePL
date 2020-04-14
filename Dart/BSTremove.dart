@@ -83,7 +83,7 @@ class BSTremove {
 
 void main() {
   var tree = new BSTremove();
-  var N = 1000;
+  var N = 10000;
   File myFile = new File("array.txt");
   String myFileContent = myFile.readAsStringSync();
   List<String> mylist = myFileContent.split(' ');
@@ -96,5 +96,5 @@ void main() {
 
   for (var i = 0; i < N; i++) tree.deleteKey(arr[i]);
 
-  print(stopwatch.elapsedMicroseconds.toDouble() / 1000); // executing time in microseconds
+  print(stopwatch.elapsedMicroseconds.toDouble() / 1000); // executing time in milliseconds
 }

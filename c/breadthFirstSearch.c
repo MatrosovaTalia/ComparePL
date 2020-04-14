@@ -49,7 +49,7 @@ int main(){
     bfs(graph, 100);
     end = clock();
     double dfs_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("%f\n", dfs_time);
+    printf("%f\n", dfs_time * 1000);
     return 0;
 }
 

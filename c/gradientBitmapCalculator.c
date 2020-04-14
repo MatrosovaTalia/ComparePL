@@ -22,7 +22,7 @@ int main(){
     generateGrayGradient(h, w, a, b);
     end = clock();
     gradient_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("%f\n", gradient_time);
+    printf("%f\n", gradient_time * 1000);
 
     // saveGradient(arr, h, w, b);
 

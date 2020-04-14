@@ -1,5 +1,5 @@
 #include <iostream>
-#include <chrono>
+#include <sys/time.h>
 #define N 10000
 using namespace std;
 
@@ -26,12 +26,15 @@ int main() {
         arr[i] = num;
     }
 
-    auto start = std::chrono::system_clock::now();
+    timeval start, end;
+    gettimeofday(&start, NULL);
 
     insertionSort(arr, len);
 
-    auto end = std::chrono::system_clock::now();
-    std::chrono::duration<double> elapsed_seconds = end-start;
+    gettimeofday(&end, NULL);
+    timeval delta;
+    delta.tv_sec = end.tv_sec - start.tv_sec;
+    delta.tv_usec = end.tv_usec - start.tv_usec;
 
-    std::cout << elapsed_seconds.count() * 1000 << "\n";
+    cout << delta.tv_sec * 1000 + delta.tv_usec / 1e6 << endl;
 }
