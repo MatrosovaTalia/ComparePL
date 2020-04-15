@@ -36,5 +36,5 @@ int main() {
     delta.tv_sec = end.tv_sec - start.tv_sec;
     delta.tv_usec = end.tv_usec - start.tv_usec;
 
-    cout << delta.tv_sec * 1000 + delta.tv_usec / 1e6 << endl;
+    cout << delta.tv_sec * 100000 + delta.tv_usec / 1e6 << endl;
 }
