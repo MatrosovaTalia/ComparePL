@@ -13,7 +13,7 @@ int main(){
 
     FILE* input = fopen("./array.txt", "r");
     for (int i = 0; i < N; i++){
-        fscanf(input, "%d", &num);
+        int s = fscanf(input, "%d", &num);
         arr[i] = num;
     }
 
