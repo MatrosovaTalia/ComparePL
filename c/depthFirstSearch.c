@@ -26,20 +26,19 @@ int main(){
     // create a full graph NxN
     Graph* graph = createGraph(N);
     for (int i = 0; i < N; i++){
-        for (int j = 0; j < N; j++){
+        for (int j = i; j < N; j++){
             addEdge(graph, i, j);
         }
     }
    
-    // printGraph(graph);
-    clock_t start, end;
-    double insert_time;
-    start = clock();
-    dfs(graph, 100);
-    end = clock();
-
-    double bfs_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("%f\n", bfs_time * 1000);
+    struct timespec start, end, elapsed;
+    clock_gettime(CLOCK_REALTIME, &start);
+    dfs(graph, 7);
+    clock_gettime(CLOCK_REALTIME, &end);
+    elapsed.tv_nsec = end.tv_nsec - start.tv_nsec;
+    elapsed.tv_sec  = end.tv_sec - start.tv_sec;
+    
+    printf ("%lf\n", 1000 * elapsed.tv_sec + elapsed.tv_nsec / 1e6);
     
     return 0;
 }

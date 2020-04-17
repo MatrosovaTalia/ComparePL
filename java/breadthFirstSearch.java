@@ -60,14 +60,14 @@ public class breadthFirstSearch{
 		}
 
 		for (int i = 0; i < n; i++){
-			for (int j = 0; j < n; j++){
+			for (int j = i; j < n; j++){
 				nodes[i].addneighbours(nodes[j]);
 			}
 		}
 		breadthFirstSearch bfs = new breadthFirstSearch();
 
 		final double startTime = System.nanoTime() / 1000000.0;
-		bfs.bfs(nodes[100]);
+		bfs.bfs(nodes[7]);
         final double endTime = System.nanoTime() / 1000000.0;
 
         System.out.println(endTime - startTime);
