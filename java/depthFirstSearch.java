@@ -46,14 +46,14 @@ public class depthFirstSearch{
 		}
 
 		for (int i = 0; i < n; i++){
-			for (int j = 0; j < n; j++){
+			for (int j = i; j < n; j++){
 				nodes[i].addneighbours(nodes[j]);
 			}
 		}
 
 		depthFirstSearch dfs = new depthFirstSearch();
 		final double startTime = System.nanoTime() / 1000000.0;
-		dfs.dfs(nodes[100]);
+		dfs.dfs(nodes[7]);
         final double endTime = System.nanoTime() / 1000000.0;
 
         System.out.println(endTime - startTime);

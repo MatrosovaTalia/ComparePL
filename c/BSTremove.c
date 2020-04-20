@@ -36,15 +36,18 @@ int main(){
         root = insert(arr[i], root);
     }
     
-    clock_t start, end;
-    double insert_time;
-    start = clock();
+
+
+    struct timespec start, end, elapsed;
+    clock_gettime(CLOCK_REALTIME, &start);
     for (int i = 0; i < N; i++){
         removeKey(arr[i], root);
     }
-    end = clock();
-    insert_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("%f\n", insert_time * 1000);
+    clock_gettime(CLOCK_REALTIME, &end);
+    elapsed.tv_nsec = end.tv_nsec - start.tv_nsec;
+    elapsed.tv_sec  = end.tv_sec - start.tv_sec;
+    
+    printf ("%lf\n", 1000 * elapsed.tv_sec + elapsed.tv_nsec / 1e6);
 
     return 0;
 }

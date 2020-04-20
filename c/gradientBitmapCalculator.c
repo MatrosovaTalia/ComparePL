@@ -15,18 +15,17 @@ int main(){
     unsigned char a = 55;
     unsigned char b = 233;
 
-    clock_t start, end;
     double gradient_time;
     
-    start = clock();
+    struct timespec start, end, elapsed;
+    clock_gettime(CLOCK_REALTIME, &start);
     generateGrayGradient(h, w, a, b);
-    end = clock();
-    gradient_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("%f\n", gradient_time * 1000);
-
+    clock_gettime(CLOCK_REALTIME, &end);
+    elapsed.tv_nsec = end.tv_nsec - start.tv_nsec;
+    elapsed.tv_sec  = end.tv_sec - start.tv_sec;
+    
+    printf ("%lf\n", 1000 * elapsed.tv_sec + elapsed.tv_nsec / 1e6);
     // saveGradient(arr, h, w, b);
-
-
     return 0;
 }
 
