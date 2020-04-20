@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string.h>
-#include <sys/time.h>
+#include <chrono>
 #define N 10000
 #define RANGE 100000
 
@@ -27,22 +27,20 @@ int main() {
     int arr[N];
     int len = N;
     int num;
-    timeval start, end;
     FILE *input = fopen("./array.txt", "r");
     for (int i = 0; i < N; i++) {
         fscanf(input, "%d", &num);
         arr[i] = num;
     }
-    gettimeofday(&start, NULL);
+    auto start = std::chrono::steady_clock::now();
 
     countingSort(arr, len);
 
-    gettimeofday(&end, NULL);
-    timeval delta;
-    delta.tv_sec = end.tv_sec - start.tv_sec;
-    delta.tv_usec = end.tv_usec - start.tv_usec;
+    auto end = std::chrono::steady_clock::now();
+    
+    std::chrono::duration<double> diff = end-start;
 
-    cout << delta.tv_sec * 1000 + delta.tv_usec / 1e4 << endl;
+    cout << diff.count() * 1000 << endl;
     return 0;
 
 }
