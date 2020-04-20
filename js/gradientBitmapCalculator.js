@@ -35,8 +35,8 @@ const measureTime = (func, name) => (...args) => {
 }
 
 const h = 50,
-w = 50,
-a = 55,
+w = 1000,
+a = 1000,
 b = 233;
 
 measureTime(generateGrayGradient)(h, w, a, b);

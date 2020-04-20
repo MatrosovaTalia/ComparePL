@@ -32,8 +32,8 @@ fun saveGradient(arr: kotlin.UIntArray, h: Int, w: Int, b:UByte): Unit {
 
 @kotlin.ExperimentalUnsignedTypes
 fun main() {
-    val h = 50
-    val w = 50
+    val h = 1000
+    val w = 1000
     val a: UByte = 55.toUByte()
     val b: UByte = 233.toUByte()
 

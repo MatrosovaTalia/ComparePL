@@ -10,8 +10,8 @@ void saveGradient(unsigned char* arr, int h, int  w, unsigned char b);
 
 
 int main(){
-    int h = 50;
-    int w = 50;
+    int h = 1000;
+    int w = 1000;
     unsigned char a = 55;
     unsigned char b = 233;
 

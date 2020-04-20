@@ -18,8 +18,8 @@ func generateGrayGradient(_ h: Int,_ w: Int,_ a: UInt8,_ b: UInt8) -> [UInt8] {
 }
 
 
-let h = 50
-let w = 50
+let h = 1000
+let w = 1000
 let a = UInt8(55)
 let b = UInt8(233)
 
