@@ -1,5 +1,5 @@
 #include <iostream>
-#include <sys/time.h>
+#include <chrono>
 #define N 10000
 using namespace std;
 
@@ -7,7 +7,7 @@ void insertionSort(int arr[], int len){
     for (int i = 1; i < len; i++){
         int temp = arr[i];
         int j = i - 1;
-        while(j >= 0 & arr[j] > temp){
+        while(j >= 0 && arr[j] > temp){
             arr[j + 1] = arr[j];
             j--;
         }
@@ -26,15 +26,12 @@ int main() {
         arr[i] = num;
     }
 
-    timeval start, end;
-    gettimeofday(&start, NULL);
+    auto start = chrono::steady_clock::now();
 
     insertionSort(arr, len);
 
-    gettimeofday(&end, NULL);
-    timeval delta;
-    delta.tv_sec = end.tv_sec - start.tv_sec;
-    delta.tv_usec = end.tv_usec - start.tv_usec;
+    auto end = chrono::steady_clock::now();
+    std::chrono::duration<double> diff = end-start;
 
-    cout << delta.tv_sec * 1000 + delta.tv_usec / 1e4 << endl;
+    cout << diff.count() * 1000 << endl;
 }

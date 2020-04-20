@@ -27,8 +27,8 @@ void saveGradient(arr, h, w, b){
 }
 
 void main() {
-  var h = 10;
-	var w = 10;
+  var h = 1000;
+	var w = 1000;
   var a = 55;
 	var b = 233;
   Stopwatch stopwatch = new Stopwatch()..start();

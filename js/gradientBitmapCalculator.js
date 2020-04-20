@@ -1,9 +1,9 @@
 function fillGradientLine(arr, line, w, a, b) {
 	let delta = b - a;
-	let offset = a * w;
+	let offset = line * w;
 	for(let i = 0; i < w; i++) {
 		let fraction = i / w;
-		arr[arr + offset] = a + Math.floor(delta * fraction);
+		arr[i + offset] = a + Math.floor(delta * fraction);
 	}
 }
 
@@ -34,8 +34,8 @@ const measureTime = (func, name) => (...args) => {
 	console.log(performance.now() - s);
 }
 
-const h = 50,
-w = 50,
+const h = 1000,
+w = 1000,
 a = 55,
 b = 233;
 

@@ -54,7 +54,7 @@ do
 	NAME=$(basename $f .cpp)
 	echo "${NAME}" >> $res
 	echo "$f" >> $progs
-	g++ -o ${f%.cpp}.out $f
+	g++ -O3 -o ${f%.cpp}.out $f
 	./"${f%.cpp}.out" >> $res
 	\time -f "%M %R %c %w" ./"${f%.cpp}.out" 2>>$res >/dev/null
 	rm "${f%.cpp}.out"	

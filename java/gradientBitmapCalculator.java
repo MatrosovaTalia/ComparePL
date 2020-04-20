@@ -29,8 +29,8 @@ class gradientBitmapCalculator{
     }
     
     public static void main(String[] args) {
-        int h = 50;
-        int w = 50;
+        int h = 1000;
+        int w = 1000;
         int a = 55;
         int b = 233;
 

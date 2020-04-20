@@ -33,8 +33,8 @@ func saveGradient(arr []uint8, h int, w int, b uint8) {
 }
 
 func main() {
-	h := 50
-	w := 50
+	h := 1000
+	w := 1000
 	a := uint8(55)
 	b := uint8(233)
 	start := time.Now()
