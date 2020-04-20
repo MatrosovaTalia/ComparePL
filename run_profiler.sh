@@ -47,20 +47,6 @@ do
 done
 
 echo "##" >> $res
-# for cpp compilation and execution
-echo "C++" >> $res
-for f in "cpp"/*.cpp
-do
-	NAME=$(basename $f .cpp)
-	echo "${NAME}" >> $res
-	echo "$f" >> $progs
-	g++ -O3 -o ${f%.cpp}.out $f
-	./"${f%.cpp}.out" >> $res
-	\time -f "%M %R %c %w" ./"${f%.cpp}.out" 2>>$res >/dev/null
-	rm "${f%.cpp}.out"	
-done
-
-echo "##" >> $res
 
 # for kotlin compilation and execution
 echo "Kotlin" >> $res
@@ -90,6 +76,21 @@ done
 
 echo "##" >> $res
 
+# for Dart compilation and execution
+echo "Dart" >> $res
+for f in "Dart"/*.dart
+do
+	NAME=$(basename $f .dart)
+	echo "${NAME}" >> $res
+	echo "$f" >> $progs
+	dart2native $f -o $NAME > /dev/null
+	./"${NAME}" >> $res
+	\time -f "%M %R %c %w" ./"${NAME}" 2>>$res >/dev/null
+	rm "${NAME}"	
+done
+
+echo "##" >> $res
+
 # for Go compilation and execution
 echo "Go" >> $res
 for f in "go"/*.go
@@ -104,18 +105,17 @@ do
 done
 
 echo "##" >> $res
-
-# for Dart compilation and execution
-echo "Dart" >> $res
-for f in "Dart"/*.dart
+# for cpp compilation and execution
+echo "C++" >> $res
+for f in "cpp"/*.cpp
 do
-	NAME=$(basename $f .dart)
+	NAME=$(basename $f .cpp)
 	echo "${NAME}" >> $res
 	echo "$f" >> $progs
-	dart2native $f -o $NAME > /dev/null
-	./"${NAME}" >> $res
-	\time -f "%M %R %c %w" ./"${NAME}" 2>>$res >/dev/null
-	rm "${NAME}"	
+	g++ -O3 -o ${f%.cpp}.out $f
+	./"${f%.cpp}.out" >> $res
+	\time -f "%M %R %c %w" ./"${f%.cpp}.out" 2>>$res >/dev/null
+	rm "${f%.cpp}.out"	
 done
 
 # TODO FIX RUST OUTPUT
