@@ -12,11 +12,7 @@ const insertionSort = (arr) => {
 	return to_sort;
 }
 
-const arr = [];
-for (let i = 0; i < 10000; i++) {
-	arr.push(Math.floor(Math.random() * 500));
-}
-const {performance} = require('perf_hooks');
+const { performance } = require('perf_hooks');
 const measureTime = (func, name) => (...args) => {
 	const s = performance.now();
 	func(...args);
@@ -24,7 +20,7 @@ const measureTime = (func, name) => (...args) => {
 }
 
 const fs = require('fs');
-fs.readFile('./array.txt', {encoding: 'utf8'}, (err, data) => {
-	const arr = data.split(' ').map(x=>+x);
+fs.readFile('./array.txt', { encoding: 'utf8' }, (err, data) => {
+	const arr = data.split(' ').map(x => +x);
 	measureTime(insertionSort, 'Insertion sort')(arr);
 })

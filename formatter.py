@@ -77,7 +77,19 @@ for line in f.readlines():
 
 for _,res in algos.items():
 	res.printResults()
-			
+
+print('# Execution modes\n')
+print('| Language | Mode |')
+print('| -------- | ---- |')
+print('| JavaScript | Node.js (execution runtime and V8 JIT compiler) |')
+print('| Swift | Swift compiler |')
+print('| C | GCC compiler |')
+print('| C++ | G++ compiler|')
+print('| Kotlin | kotlinc compiler and Java Runtime Environment |')
+print('| Java | Java Runtime Environment |')
+print('| Dart | dart2native compiler |')
+print('| Go | Go compiler |\n')
+
 		
 			
 

@@ -10,7 +10,7 @@ else
 	res="$2.md"
 fi
 
-if [ -n $1 ] && [ "${str: -1}" != "," ]
+if [ $# != 0 ] && [ "${str: -1}" != "," ]
 then
 	cmd="$1,"
 else
