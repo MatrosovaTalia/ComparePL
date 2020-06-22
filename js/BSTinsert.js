@@ -1,127 +1,101 @@
 class Node {
-	constructor(value) {
-		this.value = value;
-		this.left=null;
-		this.right=null;
-		this.value=null;
+	constructor(data) {
+		this.data = data;
+		this.left = null;
+		this.right = null;
 	}
 }
 
 class BinarySearchTree {
 	constructor() {
 		this.root = null;
-		this.size = 0;
-
-		this.addNode.bind(this);
-		this.findNode.bind(this);
-		this.removeNode.bind(this);
 	}
 
-	addNode(value) {
-		if (value.length) {
-			value.forEach((arg) => {this.addNode(arg)});
-			return;
+	insert(data) {
+		const newNode = new Node(data);
+		if (this.root === null) {
+			this.root = newNode;
+		} else {
+			this.insertNode(this.root, newNode);
 		}
+	}
 
-		if (this.size === 0) {
-			this.root = new Node(value);
-			this.size++;
-			return;
-		}
-
-		let current = this.root;
-
-		while(true) {
-			if (value === current.value) {
-				return;
-			}
-
-			if (value > current.value) {
-				if (!current.right) {
-					current.right = new Node(value);
-					break;
-				}
-				current = current.right;
+	insertNode(node, newNode) {
+		if (newNode.data < node.data) {
+			if (node.left === null) {
+				node.left = newNode;
 			} else {
-				if (!current.left) {
-					current.left = new Node(value);
-					break;
-				}
-				current = current.left;
+				this.insertNode(node.left, newNode);
 			}
-		}
-
-		this.size++;
-	}
-
-	removeNode(value) {
-		if (this.size === 0) {
-			return;
-		}
-
-		let found = this.root;
-		let res;
-
-		while(true) {
-			if (!found) {
-				return;
+		} else {
+			if (node.right === null) {
+				node.right = newNode;
+			} else {
+				this.insertNode(node.right, newNode);
 			}
-
-			if (found.value === value) {
-				res = {...found};
-				if (!found.left && !found.right) {
-					found = null;
-				} else if (!found.right || !found.right) {
-					found = found.left || found.right;
-				} else {	
-					let min = this._findMin(found.right);
-					found.value = min.value;
-					min = min.left || min.right;
-				}
-				break;
-			}
-			found = found.value < value ? found.right : found.left;
-		}
-		this.size--;
-		return res;
-	}
-
-	findNode(value) {
-		let result = this.root;
-		while(true) {
-			if (!result) {
-				return;
-			}
-
-			if (result.value === value) {
-				return result;
-			}
-
-			result = result.value < value ? result.right : result.left;
 		}
 	}
 
-	_findMin(node) {
-		while(true) {
-			if (!node.left) {
+	remove(data) {
+		this.root = this.removeNode(this.root, data);
+	}
+
+	removeNode(node, key) {
+		if (node === null) {
+			return null;
+		} else if (key < node.data) {
+			node.left = this.removeNode(node.left, key);
+			return node;
+		} else if (key > node.data) {
+			node.right = this.removeNode(node.right, key);
+			return node;
+		} else {
+			if (node.left === null && node.right === null) {
+				node = null;
 				return node;
 			}
-			node = node.left;
+
+			if (node.left === null) {
+				node = node.right;
+				return node;
+			} else if (node.right === null) {
+				node = node.left;
+				return node;
+			}
+
+			const aux = this.findMinNode(node.right);
+			node.data = aux.data;
+
+			node.right = this.removeNode(node.right, aux.data);
+			return node;
+		}
+	}
+
+	findMinNode(node) {
+		if (node.left === null) {
+			return node;
+		} else {
+			return this.findMinNode(node.left);
 		}
 	}
 }
 
-const {performance} = require('perf_hooks');
-const measureTime = (func, name) => (...args) => {
-	const s = performance.now();
-	func.addNode(...args);
-	console.log(performance.now() - s);
+const { performance } = require('perf_hooks');
+
+const measureTime = (func) => (...args) => {
+	const start = performance.now();
+	func(...args);
+	console.log(performance.now() - start);
 }
 
-const binTree = new BinarySearchTree();
-
+const binaryTree = new BinarySearchTree();
 const fs = require('fs');
-fs.readFile('./array.txt', {encoding: 'utf8'}, (err, data) => {
-	const arr = data.split(' ').map(x=>+x);
-	measureTime(binTree, 'BinTree insertion')(arr);
+fs.readFile('./array.txt', { encoding: 'utf8' }, (err, data) => {
+	const arr = data.split(' ').map(x => +x);
+	const insertArr = (arr = []) => {
+		arr.forEach(el => {
+			binaryTree.insert(el);
+		});
+	}
+	measureTime(insertArr, 'BinTree insertion')(arr);
 })
