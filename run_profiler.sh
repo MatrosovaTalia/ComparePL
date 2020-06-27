@@ -4,9 +4,31 @@ res="results.txt"
 progs="programs.txt"
 
 cmd=false
+noformat=false
 
 if [ -n "$2" ]
 then
+	if [ "$2" = "info" ]; then
+		JS=$(node -v)
+		SWIFT=$(swift --version)
+		C=$(gcc --version)
+		CPP=$(g++ --version)
+		KOTLIN=$(kotlinc -version 2>&1)
+		JAVA=$(java --version)
+		GO=$(go version)
+		DART=$(dart --version 2>&1)
+		clear
+		echo $'###--PACKAGES INFO--###\n\n'
+		printf "%s:\n###\n%s\n###\n\n" "JavaScript" "${JS}"
+		printf "%s:\n###\n%s\n###\n\n" "Swift" "${SWIFT}"
+		printf "%s:\n###\n%s\n###\n\n" "C" "${C}"
+		printf "%s:\n###\n%s\n###\n\n" "C++" "${CPP}"
+		printf "%s:\n###\n%s\n###\n\n" "Kotlin" "${KOTLIN}"
+		printf "%s:\n###\n%s\n###\n\n" "Java" "${JAVA}"
+		printf "%s:\n###\n%s\n###\n\n" "GoLang" "${GO}"
+		printf "%s:\n###\n%s\n###\n\n" "Dart" "${DART}"
+		noformat=true
+	fi
 	cmd=true
 fi
 
@@ -155,4 +177,7 @@ fi
 # 	rm "${NAME}"	
 # done
 
-python3 formatter.py
+if [ "$noformat" = false ]
+then
+	python3 formatter.py
+fi
