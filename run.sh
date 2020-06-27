@@ -12,7 +12,13 @@ fi
 
 if [ $# != 0 ] && [ "${str: -1}" != "," ]
 then
-	cmd="$1,"
+	if [ $1 = "info" ]
+	then
+		cmd=$1
+		res="package_info.txt"
+	else
+		cmd="$1,"
+	fi
 else
 	cmd=$1
 fi
