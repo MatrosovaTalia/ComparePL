@@ -60,7 +60,7 @@ if [ "$cmd" = false ] || [[ $2 == *"swift,"* ]]; then
 	do
 		NAME=$(basename $f .swift)
 		echo "${NAME}" >> $res
-		swiftc $f -o ${f%.swift}.out
+		swiftc $f -Ounchecked -o ${f%.swift}.out
 		./"${f%.swift}.out" >> $res
 		\time -f "%M %R %c %w" ./"${f%.swift}.out" 2>>$res >/dev/null
 		# pmap -x `ps -ef | grep swift | awk '{print $2}'`
@@ -76,7 +76,7 @@ if [ "$cmd" = false ] || [[ $2 == *"c,"* ]]; then
 		NAME=$(basename $f .c)
 		echo "${NAME}" >> $res
 		echo "$f" >> $progs
-		gcc $f -O2 -o ${f%.c}.out
+		gcc $f -O3 -o ${f%.c}.out
 		./"${f%.c}.out" >> $res
 		\time -f "%M %R %c %w" ./"${f%.c}.out" 2>>$res >/dev/null
 		rm "${f%.c}.out"	
