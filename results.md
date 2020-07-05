@@ -3,81 +3,81 @@
 
 | Metric | JavaScript | Swift | C | Kotlin | Java | Dart | 
 | - |  - |  - |  - |  - |  - |  - | 
-| Execution time (ms) | 11.34398  | 15.68603  | 4.511069  | 24.56804  | 4.063260  | 2.756  | 
-| Max RSS Memory(kb) | 29860  | 16268  | 1968  | 54224  | 85040  | 14100  | 
-| Minor (frame) pf | 7059  | 881  | 140  | 7847  | 13885  | 2117  | 
-| Voluntary con. switches | 68  | 0  | 0  | 86  | 632  | 1  | 
-| Involuntary con. switches | 46  | 1  | 1  | 524  | 1487  | 6  | 
+| Execution time (ms) | 11.62397  | 14.65106  | 4.556192  | 25.96611  | 3.850934  | 2.627  | 
+| Max RSS Memory(kb) | 29736  | 16360  | 1960  | 54068  | 85084  | 14052  | 
+| Minor (frame) pf | 7049  | 882  | 138  | 7822  | 14987  | 2116  | 
+| Voluntary con. switches | 28  | 0  | 0  | 130  | 602  | 2  | 
+| Involuntary con. switches | 42  | 1  | 1  | 564  | 1833  | 6  | 
 
 #  BSTremove 
 
 | Metric | JavaScript | Swift | C | Kotlin | Java | Dart | 
 | - |  - |  - |  - |  - |  - |  - | 
-| Execution time (ms) | 18.88741  | 18.21100  | 1.787405  | 5.92759  | 3.469104  | 3.14  | 
-| Max RSS Memory(kb) | 29872  | 16508  | 2024  | 54208  | 87188  | 14056  | 
-| Minor (frame) pf | 7091  | 883  | 139  | 7867  | 14832  | 2119  | 
-| Voluntary con. switches | 82  | 1  | 0  | 265  | 513  | 2  | 
-| Involuntary con. switches | 45  | 1  | 1  | 550  | 1513  | 6  | 
+| Execution time (ms) | 7.908861  | 17.54605  | 1.776948  | 5.012103  | 3.448782  | 2.086  | 
+| Max RSS Memory(kb) | 29488  | 16512  | 1992  | 54344  | 86296  | 14032  | 
+| Minor (frame) pf | 7096  | 883  | 140  | 7862  | 14823  | 2121  | 
+| Voluntary con. switches | 28  | 1  | 0  | 97  | 408  | 2  | 
+| Involuntary con. switches | 39  | 0  | 1  | 518  | 1563  | 6  | 
 
 #  countingSort 
 
 | Metric | JavaScript | Swift | C | Kotlin | Java | Dart | C++ | 
 | - |  - |  - |  - |  - |  - |  - |  - | 
-| Execution time (ms) | 10.54078  | 0.324010  | 4.167319  | 5.146059  | 7.702035  | 1.731  | 0.6258  | 
-| Max RSS Memory(kb) | 30816  | 16184  | 5672  | 51368  | 84316  | 14752  | 4064  | 
-| Minor (frame) pf | 7402  | 872  | 1051  | 7092  | 15520  | 2243  | 235  | 
-| Voluntary con. switches | 20  | 6  | 0  | 92  | 603  | 2  | 0  | 
-| Involuntary con. switches | 42  | 1  | 1  | 515  | 1797  | 5  | 1  | 
+| Execution time (ms) | 10.33302  | 0.284075  | 3.971354  | 4.250059  | 7.448454  | 1.764  | 0.557193  | 
+| Max RSS Memory(kb) | 31072  | 16160  | 5616  | 51760  | 84828  | 14840  | 4088  | 
+| Minor (frame) pf | 7401  | 872  | 1050  | 7143  | 15682  | 2241  | 234  | 
+| Voluntary con. switches | 88  | 0  | 0  | 111  | 636  | 1  | 0  | 
+| Involuntary con. switches | 37  | 1  | 1  | 467  | 1769  | 6  | 1  | 
 
 #  gradientBitmapCalculator 
 
 | Metric | JavaScript | Swift | C | Kotlin | Java | Dart | Go | 
 | - |  - |  - |  - |  - |  - |  - |  - | 
-| Execution time (ms) | 19.63206  | 2.938032  | 1.004333  | 75.90493  | 23.76804  | 42.686  | 4.781983  | 
-| Max RSS Memory(kb) | 36960  | 14292  | 2552  | 39792  | 87664  | 31228  | 2892  | 
-| Minor (frame) pf | 8826  | 848  | 306  | 4010  | 15141  | 6876  | 439  | 
-| Voluntary con. switches | 15  | 0  | 0  | 48  | 536  | 20  | 8  | 
-| Involuntary con. switches | 28  | 1  | 1  | 285  | 1670  | 39  | 40  | 
+| Execution time (ms) | 17.79160  | 2.979040  | 1.053587  | 76.4878  | 23.84044  | 48.817  | 3.193215  | 
+| Max RSS Memory(kb) | 36860  | 14180  | 2700  | 39384  | 87380  | 31412  | 2912  | 
+| Minor (frame) pf | 8778  | 844  | 307  | 3988  | 15199  | 6873  | 443  | 
+| Voluntary con. switches | 14  | 0  | 0  | 47  | 527  | 20  | 5  | 
+| Involuntary con. switches | 27  | 1  | 1  | 320  | 1436  | 37  | 36  | 
 
 #  insertionSort 
 
 | Metric | JavaScript | Swift | C | Kotlin | Java | Dart | C++ | 
 | - |  - |  - |  - |  - |  - |  - |  - | 
-| Execution time (ms) | 97.38620  | 23.33998  | 23.18587  | 31.85554  | 33.29986  | 224.471  | 20.3165  | 
-| Max RSS Memory(kb) | 29664  | 15936  | 1672  | 51380  | 84972  | 13860  | 3612  | 
-| Minor (frame) pf | 6932  | 800  | 71  | 7055  | 14166  | 2051  | 138  | 
-| Voluntary con. switches | 22  | 5  | 0  | 179  | 594  | 1  | 0  | 
-| Involuntary con. switches | 45  | 1  | 1  | 553  | 1556  | 6  | 1  | 
+| Execution time (ms) | 94.62543  | 22.53496  | 23.41938  | 32.77034  | 50.44921  | 199.819  | 15.0999  | 
+| Max RSS Memory(kb) | 29672  | 16096  | 1708  | 50636  | 85848  | 13976  | 3640  | 
+| Minor (frame) pf | 6883  | 802  | 74  | 6924  | 14922  | 2051  | 137  | 
+| Voluntary con. switches | 37  | 7  | 2  | 131  | 600  | 17  | 1  | 
+| Involuntary con. switches | 37  | 1  | 1  | 507  | 1445  | 6  | 1  | 
 
 #  mergeSort 
 
 | Metric | JavaScript | Swift | C | Kotlin | Java | Dart | C++ | 
 | - |  - |  - |  - |  - |  - |  - |  - | 
-| Execution time (ms) | 30.14464  | 14.02306  | 1.529649  | 31.70497  | 9.197457  | 8.365  | 2.08008  | 
-| Max RSS Memory(kb) | 32384  | 16332  | 1748  | 53920  | 84644  | 16548  | 3628  | 
-| Minor (frame) pf | 7682  | 815  | 83  | 7895  | 15299  | 2673  | 146  | 
-| Voluntary con. switches | 24  | 0  | 0  | 137  | 629  | 3  | 0  | 
-| Involuntary con. switches | 51  | 1  | 1  | 562  | 1766  | 6  | 1  | 
+| Execution time (ms) | 28.75392  | 13.38601  | 1.530770  | 25.82104  | 4.112910  | 8.339  | 1.63732  | 
+| Max RSS Memory(kb) | 31912  | 15972  | 1760  | 54820  | 85700  | 16564  | 3628  | 
+| Minor (frame) pf | 7670  | 809  | 83  | 7977  | 14452  | 2673  | 146  | 
+| Voluntary con. switches | 12  | 0  | 1  | 136  | 656  | 3  | 0  | 
+| Involuntary con. switches | 52  | 1  | 1  | 515  | 1779  | 7  | 1  | 
 
 #  breadthFirstSearch 
 
-| Metric | C | Kotlin | Java | 
-| - |  - |  - |  - | 
-| Execution time (ms) | 42.26984  | 34.79615  | 17.98524  | 
-| Max RSS Memory(kb) | 32944  | 85432  | 83352  | 
-| Minor (frame) pf | 7884  | 15680  | 14831  | 
-| Voluntary con. switches | 1  | 223  | 500  | 
-| Involuntary con. switches | 1  | 546  | 1452  | 
+| Metric | Swift | C | Kotlin | Java | 
+| - |  - |  - |  - |  - | 
+| Execution time (ms) | 18.91835  | 41.26676  | 28.01682  | 17.92338  | 
+| Max RSS Memory(kb) | 18576  | 32900  | 85136  | 85480  | 
+| Minor (frame) pf | 1943  | 7885  | 15652  | 14854  | 
+| Voluntary con. switches | 5  | 1  | 123  | 586  | 
+| Involuntary con. switches | 1  | 1  | 514  | 1423  | 
 
 #  depthFirstSearch 
 
-| Metric | C | Kotlin | Java | 
-| - |  - |  - |  - | 
-| Execution time (ms) | 2.357843  | 61.67406  | 73.90800  | 
-| Max RSS Memory(kb) | 17368  | 43568  | 86048  | 
-| Minor (frame) pf | 3974  | 5072  | 15611  | 
-| Voluntary con. switches | 0  | 87  | 374  | 
-| Involuntary con. switches | 1  | 333  | 1535  | 
+| Metric | Swift | C | Kotlin | Java | 
+| - |  - |  - |  - |  - | 
+| Execution time (ms) | 18.16016  | 2.528638  | 60.28435  | 73.90500  | 
+| Max RSS Memory(kb) | 18532  | 17272  | 43864  | 86100  | 
+| Minor (frame) pf | 1957  | 3973  | 5069  | 15139  | 
+| Voluntary con. switches | 2  | 0  | 48  | 432  | 
+| Involuntary con. switches | 1  | 1  | 301  | 1585  | 
 
 # Execution modes
 
