@@ -60,8 +60,9 @@ if [ "$cmd" = false ] || [[ $2 == *"swift,"* ]]; then
 	do
 		NAME=$(basename $f .swift)
 		echo "${NAME}" >> $res
-		swift $f >> $res
-		\time -f "%M %R %c %w" ~/swift/swift-5.1.4-RELEASE-ubuntu18.04/usr/bin/swift $f 2>>$res >/dev/null
+		swiftc $f -o ${f%.swift}.out
+		./"${f%.swift}.out" >> $res
+		\time -f "%M %R %c %w" ./"${f%.swift}.out" 2>>$res >/dev/null
 		# pmap -x `ps -ef | grep swift | awk '{print $2}'`
 	done
 fi
